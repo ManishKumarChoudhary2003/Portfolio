@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Statistical Analysis System (SAS)",
+    "role": "Data Analysis",
+    "startDate": "Oct 2022",
+    "endDate": "present",
+    "location": "Jodhpur,Rajasthan",
+    "point_1": "SAS Institute is an American multinational developer of analytics software based in Cary, North Carolina.",
+    "point_2": "Specializing in Data Science with a focus on SAS (Statistical Analysis System).",
+    "skills": "Studio, Data Science, SAS"
+  },
+  {
+    "id": 2,
+    "title": "Research Intern - Zeetron Networks",
+    "role": "Data Science with Machine Learning",
+    "startDate": "May 2023",
+    "endDate": "June 2023",
+    "location": "Jaipur,Rajasthan",
+    "point_1": "Zeetron Networks is a reputed company that provides the best Quality Software Development and products in India.",
+    "point_2": "Learnt the real-world application of data science and built analytical models that enhance business outcomes.",
+    "skills": "NumPy, pandas, Matplotlib, Machine Learning, Python (Programming Language), Data Analysis"
+  },
+  {
+    "id": 3,
+    "title": "Internshala Trainee",
+    "role": "Android Development",
+    "startDate": "May 2023",
+    "endDate": "Jul 2023",
+    "location": "Remote",
+    "point_1": "Developed expertise in utilizing Kotlin for Android app development, incorporating modern technologies and frameworks to create robust and efficient applications.",
+    "point_2": "Acquired skills in UI/UX design, data management, API integration, testing, debugging, and deployment, ensuring end-to-end proficiency in the Android app development lifecycle.",
+    "skills": "Databases, Android Development, Android Studio"
+  }
+]
