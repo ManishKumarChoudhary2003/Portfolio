@@ -1,0 +1,33 @@
+/* Footer.module.css */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .column h3 {
+    font-size: 1.2rem;
+  }
+  
+  .column p {
+    font-size: 0.9rem;
+  }
+  
+
+  .links{
+    display: flex;
+    gap: 5px;
+  }
+  .links img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+  }

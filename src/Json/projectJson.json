@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Laptop Galaxy(E-Commerce)",
-    "image": "#",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO1lBizkxc-UlPYBVjADZ00KBuGceZjfM8KAOIoe-3CC_nJDPFj6vApv8n1p8mrAA4SbM&usqp=CAU",
     "dsc": {
       "point_1": "Laptop Galaxy, a React.js web app, showcases 200+ laptops from diverse 10+ brands, offering users an extensive selection.",
       "point_2": "The application fetches detailed specifications from a Firebase database, enhancing the browsing experience for users.",
@@ -16,7 +16,7 @@
   {
     "id": 2,
     "title": "Expense Tracker",
-    "image": "#",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlgL8KTBA9dcyyofxx-7PzSCrs96qiD6WyUA&usqp=CAU",
     "dsc": {
       "point_1": "Expense Tracker, a React.js tool, simplifies expense tracking for individuals and businesses.",
       "point_2": "Effortlessly monitor and control your finances with this intuitive financial management solution.",
@@ -30,15 +30,15 @@
   {
     "id": 3,
     "title": "Zomato Website Design",
-    "image": "#",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn0qN4eblTT704CJR7aP61YjIkJv-J5gplFw&usqp=CAU",
     "dsc": {
-      "point_1": "Design a website like Zomato using HTML, CSS, and JavaScript for a similar look and feel.",
+      "point_3": "Design a website like Zomato using HTML, CSS, and JavaScript for a similar look and feel.",
       "point_2": "Utilize static information to showcase various food categories seamlessly on the website.",
-      "point_3": "Implement a user-friendly interface allowing visitors to explore four curated food collections through the website."
+      "point_1": "Implement a user-friendly interface allowing visitors to explore four curated food collections through the website."
     },
     "links": {
       "view": "#",
       "code": "https://github.com/Manishkumarchoudhary2003/-Zomato_WebDesign"
     }
-  }
+  }   
 ]

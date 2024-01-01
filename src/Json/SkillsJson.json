@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Java",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVUX8Zl1APi0f2wjMZo5lKGUAK-4BhznaPMQ&usqp=CAU"
+  },
+  {
+    "id": 2,
+    "name": "Spring",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYoA22_breVC1z7A66yDn-YGnjGZzvUJjkAg&usqp=CAU"
+  },
+  {
+    "id": 3,
+    "name": "Spring boot",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXHduwzqxdrSSbbqnxPEVvuKR_6GqTX3AWvg&usqp=CAU"
+  },
+  {
+    "id": 4,
+    "name": "React Js",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqVUnM-QqMQPiLRw8TyVTDp-KQbq08ji43VA&usqp=CAU"
+  },
+  {
+    "id": 5,
+    "name": "MySql",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdtRtDfxlqeUXXt60abBGKKJxxbxKy7cMTJQ&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "name": "Python",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuEuL56xJ8-BdCWGaG49inDBMU0ovKOLoDg&usqp=CAU"
+  }
+]

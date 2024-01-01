@@ -1,0 +1,83 @@
+/* Experience.module.css */
+
+.experience { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+ 
+.card {
+    /* background-color: #fff; */
+    background-color: #eaece3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px white;
+    overflow: auto;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    width: 800px; 
+    margin-top: 20px; 
+}
+
+.card:hover {
+    transform: scale(0.9) rotate(-4deg);
+    transition: transform 0.1s ease-in-out;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.heading {
+    font-size: 3.0rem;
+    color: #0fa8f4;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.card h2 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.card hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+.skills {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.skills span {
+    margin-right: 10px;
+    padding: 4px;
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+/* Media Query for Small Screens */
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+        /* Make the card full width on small screens */
+        margin-top: 20px;
+        /* Adjust margin for spacing */
+    }
+}

@@ -1,0 +1,64 @@
+/* Home.module.css */
+
+ 
+
+/* .homeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+  padding-top: 150px;
+  height: 100vh; 
+  background-color: #eadede;  
+  color: #333;  
+} */
+
+.homeContainer {
+    display: grid;  
+    grid-template-columns: 1fr 1fr;
+    padding-top: 0px;
+    height: 600px; 
+    background-color: #eadede;  
+    color: #333;  
+  }
+
+  .intro{
+    /* background-color: #3498db; */
+    padding: 100px;
+  }
+
+  .links{
+    display: flex;
+    gap: 5px;
+  }
+  .links img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+
+  .image{
+    /* background-color: wheat; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .image img{
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+  }
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+span {
+  color: #3498db; /* Add your desired span color */
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 0;
+}
