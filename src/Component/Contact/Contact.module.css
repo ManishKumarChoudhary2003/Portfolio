@@ -2,26 +2,36 @@
 
 .contact {
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
-    padding: 50px;
+    padding: 20px;
     background-color: white;
   }
   
-  /* .column {
+  .column {
     flex: 1;
-  } */
+  }
   
   .image {
+    width: 400px; 
+    margin-left: 300px;
+    height: auto;
+    border-radius: 8px; 
+  }
+  .heading {
+    font-size: 3.0rem;
+    color: #0fa8f4;
+    margin-top: 150px; 
+    text-align: center;
+  }
+  .headingcover{
+    background-color: white;
+  }
+  form {
     width: 400px;
     /* max-width: 300px; */
     height: auto;
     border-radius: 8px;
-  }
-  
-  form {
-    max-width: 400px;
-    width: 100%;
   }
   
   label {
@@ -33,7 +43,7 @@
   input,
   textarea {
     width: 100%;
-    padding: 8px;
+    padding: 15px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -41,7 +51,7 @@
   }
   
   button {
-    background-color: #4caf50;
+    background-color: #363232;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -50,7 +60,7 @@
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #000000;
   }
 
   .error {
@@ -58,7 +68,29 @@
     font-size: 14px;
     margin-top: 4px;
   }
+
+  .successMessage { 
+    color: green;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+    animation: fadeInOut 2s ease-in-out;
+  }
   
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    10%, 90% {
+      opacity: 1;
+    }
+  }
+
+  ::placeholder {
+    font-weight: bold;
+  }
   /* Media Query for Small Screens */
   @media only screen and (max-width: 600px) {
     .contact {
@@ -68,6 +100,9 @@
   
     .column {
       margin-bottom: 20px;
+    }
+    .image{
+        margin-left: 0px;
     }
   }
   

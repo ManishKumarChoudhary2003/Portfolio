@@ -40,7 +40,7 @@
   } */
 
   .card:hover {
-    transform: scale(0.9) rotateY(50deg); 
+    transform: scale(0.9) rotateY(40deg); 
     transition: transform 0.3s ease-in-out;
   }
   

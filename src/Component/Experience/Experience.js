@@ -7,20 +7,20 @@ const Experience = () => {
   const experienceData = Json;
   return (
     <div>
-      <h1 className={styles.heading}>Experience</h1>
+      <h1 className={styles.heading}>💫 Experience</h1>
 
       <div className={styles.experience}>
         {experienceData.map((data) => (
           <div key={data.id} className={styles.card}>
             <div className={styles["card-content"]}>
-              <h1>{data.title}</h1>
-              <h2>{data.role}</h2>
-              <h3>{data.location}</h3>
+              <h1>{data.title} 📜</h1>
+              <h2>{data.role} 👩‍💻</h2>
+              <h3>{data.location} 📍</h3>
               <hr />
               <div className={styles.skills}>
-                <strong>Skills:</strong>
+                <strong>Skills: </strong>
                 {data.skills.split(", ").map((skill, index) => (
-                  <span key={index}>{skill}</span>
+                  <span key={index}>{skill} 💡</span>
                 ))}
               </div>
             </div>

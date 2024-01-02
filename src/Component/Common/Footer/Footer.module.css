@@ -1,7 +1,7 @@
 /* Footer.module.css */
 
 .footer {
-    background-color: #333;
+    background-color: black;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -13,6 +13,25 @@
     margin: 0 10px;
   }
   
+  .columnLinks {
+    display: flex;
+    flex-direction: column; /* Update flex direction to column */
+    align-items: flex-start;
+  }
+  
+  .columnLinks a {
+    text-decoration: none;
+    color: white;
+    margin: 2px 0;  
+    padding: 1px;
+    border-radius: 4px;
+    transition: background-color 0.1s ease-in-out;
+  }
+  
+  .columnLinks a:hover { 
+    color: chocolate;
+  }
+  
   .column h3 {
     font-size: 1.2rem;
   }
@@ -21,13 +40,38 @@
     font-size: 0.9rem;
   }
   
-
-  .links{
+  .links {
     display: flex;
     gap: 5px;
   }
-  .links img{
+  
+  .links img {
     width: 30px;
     height: 30px;
     border-radius: 100%;
   }
+
+  .maillink{
+    text-decoration: none;
+    color: white; 
+  }
+
+  
+  
+  /* Media query for small screens */
+  @media only screen and (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .column {
+      margin-bottom: 20px;
+    }
+  
+    .links {
+      margin-top: 20px;
+    }
+  }
+  

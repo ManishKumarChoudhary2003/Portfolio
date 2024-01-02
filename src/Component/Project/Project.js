@@ -7,15 +7,15 @@ const Project = () => {
   const projectData = Json;
   return (
     <div>
-      <h1 className={styles.heading}>Projects</h1>
+      <h1 className={styles.heading}>🎯 Projects</h1>
       <div className={styles.project}>
         {projectData.map((data) => (
           <div key={data.id} className={styles.card}>
             <img src={data.image} alt={data.title} />
             <div className={styles["card-content"]}>
               <p className={styles.title}>{data.title}</p>
-              <p>1. {data.dsc.point_1}</p>
-              <p>2. {data.dsc.point_2}</p>
+              <p>👉 {data.dsc.point_1}</p>
+              <p>👉 {data.dsc.point_2}</p>
               {/* <p>3. {data.dsc.point_3}</p> */}
               <div className={styles.links}>
                 <a
