@@ -46,12 +46,24 @@
     gap: 5px;
   }
   
+  
+ /* Add the following styles to Footer.module.css */
+
+ .links a {
+    position: relative;
+    overflow: hidden;
+  }
+  
   .links img {
     width: 30px;
     height: 30px;
-    border-radius: 100%;
+    border-radius: 50%;
+    transition: transform 0.1s ease-in-out;
   }
-
+  
+  .links a:hover img {
+    transform: scale(1.5);  
+  }
   .maillink{
     text-decoration: none;
     color: white; 
@@ -82,7 +94,8 @@
     justify-content: center;
     text-align: center;
   }
- 
+
+  
   
   .upButton:hover {
     background-color: black;

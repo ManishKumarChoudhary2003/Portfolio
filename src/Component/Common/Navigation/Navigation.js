@@ -1,6 +1,7 @@
 // Navigation.js
 import React from "react";
 import styles from "./Navigation.module.css";
+import MainLogo from "../../../assets/manishlogo.png";
 
 const Navigation = () => {
   const scrollToSection = (sectionId) => {
@@ -14,6 +15,7 @@ const Navigation = () => {
   return (
     <nav className={styles.navigation}>
       <div className={styles.nameDisplay}>
+        <span><img src={MainLogo} alt="Loading..." /></span>
         <h1>Manish</h1>
       </div>
       <div className={styles.navItems}>
