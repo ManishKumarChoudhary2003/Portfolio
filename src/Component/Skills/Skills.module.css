@@ -25,6 +25,7 @@
 
 .bar {
     width: 200px;
+    height: 200px;
     margin: 10px;
     text-align: center;
 }
@@ -36,20 +37,27 @@
 
 .info {
     background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 30px;
+    padding: 10px;
+    border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .info img {
     width: 60px;
     height: 60px;
-    object-fit: contain;
+    object-fit: cover; /* Use 'cover' to make sure the image is fully contained within the specified dimensions */
+    border-radius: 50%; /* Add border-radius to make the image circular */
     margin-bottom: 10px;
 }
+/* .info img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-bottom: 10px;
+} */
 
 .info p {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #333;
 }

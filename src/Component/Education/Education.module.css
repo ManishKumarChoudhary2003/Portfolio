@@ -29,8 +29,8 @@
     overflow: auto;
     padding: 20px;
     transition: transform 0.3s ease-in-out;
-    width: 600px; /* Set a width for the card */
-    margin-bottom: 30px; /* Add margin for spacing */
+    width: 700px; /* Set a width for the card */
+    margin: 30px; /* Add margin for spacing */
   }
   
     

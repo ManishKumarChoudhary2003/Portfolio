@@ -8,7 +8,7 @@
     "location": "Jodhpur,Rajasthan",
     "point_1": "SAS Institute is an American multinational developer of analytics software based in Cary, North Carolina.",
     "point_2": "Specializing in Data Science with a focus on SAS (Statistical Analysis System).",
-    "skills": "Studio, Data Science, SAS"
+    "skills": "SAS Studio, Data Science, SAS"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "location": "Jaipur,Rajasthan",
     "point_1": "Zeetron Networks is a reputed company that provides the best Quality Software Development and products in India.",
     "point_2": "Learnt the real-world application of data science and built analytical models that enhance business outcomes.",
-    "skills": "NumPy, pandas, Matplotlib, Machine Learning, Python (Programming Language), Data Analysis"
+    "skills": "NumPy, pandas, Matplotlib, Seaborn, Machine Learning Algorithms, Python, Data Analysis"
   },
   {
     "id": 3,
@@ -30,6 +30,17 @@
     "location": "Remote",
     "point_1": "Developed expertise in utilizing Kotlin for Android app development, incorporating modern technologies and frameworks to create robust and efficient applications.",
     "point_2": "Acquired skills in UI/UX design, data management, API integration, testing, debugging, and deployment, ensuring end-to-end proficiency in the Android app development lifecycle.",
-    "skills": "Databases, Android Development, Android Studio"
+    "skills": "Kotlin, Databases, Android Development, Android Studio"
+  },
+  {
+    "id": 4,
+    "title": "Jodhpur Institute of Engineering and Technology, Jodhpur",
+    "role": "Frontend Development",
+    "startDate": "June 2022",
+    "endDate": "Jul 2022",
+    "location": "Jodhpur,Rajasthan",
+    "point_1": "I have received formal training in frontend development, gaining proficiency in HTML and CSS to create visually appealing and interactive user interfaces.",
+    "point_2": "I have acquired a strong foundation in C++, enhancing my skills in problem-solving.",
+    "skills": "Html, CSS, JavaScipt, C++"
   }
 ]

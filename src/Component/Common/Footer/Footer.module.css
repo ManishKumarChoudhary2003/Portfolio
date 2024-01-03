@@ -15,20 +15,21 @@
   
   .columnLinks {
     display: flex;
-    flex-direction: column; /* Update flex direction to column */
+    flex-direction: column;
     align-items: flex-start;
   }
   
-  .columnLinks a {
+  .columnLinks button {
     text-decoration: none;
     color: white;
+    background-color: black;
     margin: 2px 0;  
     padding: 1px;
     border-radius: 4px;
     transition: background-color 0.1s ease-in-out;
   }
   
-  .columnLinks a:hover { 
+  .columnLinks button:hover { 
     color: chocolate;
   }
   
@@ -55,9 +56,47 @@
     text-decoration: none;
     color: white; 
   }
+  .designedBy {
+    text-align: center;
+    padding: 10px; 
+    font-style: italic;
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .upButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 2.0rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+ 
+  
+  .upButton:hover {
+    background-color: black;
+  }
+  
+  /* Media query for small screens */
+  @media only screen and (max-width: 768px) {
+    .upButton {
+      bottom: 10px;
+      right: 10px;
+      font-size: 1.2rem;
+    }
+  }
 
-  
-  
   /* Media query for small screens */
   @media only screen and (max-width: 768px) {
     .footer {

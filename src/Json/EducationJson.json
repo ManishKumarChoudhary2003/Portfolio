@@ -1,24 +1,24 @@
 [
     {
         "id" : 1,
-        "title" : "B.Tech. (CSE) ",
+        "title" : "B.Tech. (Computer Science Engineering) ",
         "location" : "Jodhpur Insititute of Engineering and Technology, Jodhpur",
         "passing_year" : 2025,
         "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitRaVvMu-_A8N0ulrBlQzG9_umoZlCJQ-UGBTShdw_IPeSDMborSuNHt0HJXBL9CGEGc&usqp=CAU",
-        "grade" : "9.9"
+        "grade" : "9.9 CGPA"
     },
     {
         "id" : 2,
-        "title" : "Higher Secondary",
-        "location" : "Rajasthan Board of Secondary Education",
+        "title" : "Higher Secondary (RBSE)",
+        "location" : "Noble Senior Secondary School, Falna (Pali) Rajasthan",
         "passing_year" : 2021,
         "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs2ABOjk7n-tqbgvDd-P24SGqmxJ2c5N8SEQ&usqp=CAU",
         "grade" : "100%"
     },
     {
         "id" : 3,
-        "title" : "Secondary ",
-        "location" : "Rajasthan Board of Secondary Education",
+        "title" : "Secondary (RBSE)",
+        "location" : "Adarsh Vidya Mandir, Rani (Pali) Rajasthan",
         "passing_year" : 2019,
         "image" : "https://hindi.cdn.zeenews.com/hindi/sites/default/files/2023/04/05/1706073-first-digital-school.jpg",
         "grade" : "96.50%"

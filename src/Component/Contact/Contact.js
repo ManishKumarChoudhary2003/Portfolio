@@ -129,7 +129,7 @@ const Contact = () => {
   };
 
   return (
-    <div className={styles.headingcover}>
+    <div className={styles.headingcover} id="contact">
       <h1 className={styles.heading}>🌐Get In Touch </h1>
 
       <div className={styles.contact}>

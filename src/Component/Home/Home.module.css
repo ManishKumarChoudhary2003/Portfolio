@@ -1,11 +1,22 @@
 /* Home.module.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .homeContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 600px;
   color: white;
-  /* background-color: chocolate; */
+  animation: fadeIn 0.5s ease-in-out both;
 }
 
 .intro {
@@ -19,12 +30,26 @@
   font-size: 20px;
 }
 
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .introRole {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Great Vibes', cursive;
   font-style: oblique;
   color: rgb(219, 97, 97);
+  /* Set initial state */
+  opacity: 0;
+  transform: translateX(-100%);
+
+  /* Apply animation */
+  animation: slideInLeft 3s forwards;
 }
 
 
@@ -54,13 +79,11 @@
 }
 
 .image img:hover {
-  transform: translateY(-20px);
-  /* Move left by 5 pixels on hover */
+  transform: translateX(30px);
 }
 
 .links img:hover {
   transform: translateY(-10px);
-  /* Move left by 5 pixels on hover */
 }
 
 

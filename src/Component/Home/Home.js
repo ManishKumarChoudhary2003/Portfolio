@@ -5,13 +5,15 @@ import linkedln from "../../assets/linkedln.png";
 import Instagram from "../../assets/insta.jpeg";
 import Manish from "../../assets/Manish.png";
 import styles from "./Home.module.css";
+import Email from "../../assets/email.png";
+import Resume from "../../assets/resume.png";
 
 const Home = () => {
   return (
-    <div className={styles.homeContainer}>
+    <div className={styles.homeContainer} id="home">
       <div className={styles.intro}>
         <h1>
-          👋 Hi There,
+          Hi There👋,
           <br /> I'm Manish Kumar Choudhary
         </h1>
         <p className={styles.introRole}>Java Full Stack Developer 💻</p>
@@ -29,31 +31,33 @@ const Home = () => {
             <img src={linkedln} alt="LinkedIn" />
           </a>
           <a
-            href="https://www.linkedin.com/in/manishkumarchoudhary/"
+            href="https://github.com/Manishkumarchoudhary2003"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={github} alt="Github" />
           </a>
           <a
-            href="https://www.linkedin.com/in/manishkumarchoudhary/"
+            href="https://www.instagram.com/manish_.96/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={Instagram} alt="Instagram" />
           </a>
-          <div className={styles.resumeBtn}>
-            <div className={styles.resumeBtn}>
-              <a
-                href="https://drive.google.com/file/d/1m2OBP_81-09GR8mST30NeRCWqt7j2Cdx/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.btn}
-              >
-                View Resume <i className="fas fa-file"></i>
-              </a>
-            </div>
-          </div>
+          <a
+            href="mailto:cmanishkumar193@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Email} alt="Email" />
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1m2OBP_81-09GR8mST30NeRCWqt7j2Cdx/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Resume} alt="Resume" />
+          </a>
         </div>
       </div>
       <div className={styles.image}>

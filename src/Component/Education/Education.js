@@ -6,7 +6,7 @@ import styles from "./Education.module.css";
 const Education = () => {
   const educationData = Json;
   return (
-    <div className={styles.education}>
+    <div className={styles.education} id="education">
       <div>
         <h1 className={styles.heading}> 🎓 My Education</h1>
         <p className={styles.line}>

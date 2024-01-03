@@ -6,8 +6,8 @@ import styles from "./Experience.module.css";
 const Experience = () => {
   const experienceData = Json;
   return (
-    <div>
-      <h1 className={styles.heading}>💫 Experience</h1>
+    <div id="experience" className={styles.experienceContainer}>
+      <h2 className={styles.heading}>💫 Experience</h2>
 
       <div className={styles.experience}>
         {experienceData.map((data) => (

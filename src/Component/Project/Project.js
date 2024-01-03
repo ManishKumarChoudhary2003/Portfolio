@@ -6,8 +6,8 @@ import styles from "./Project.module.css";
 const Project = () => {
   const projectData = Json;
   return (
-    <div>
-      <h1 className={styles.heading}>🎯 Projects</h1>
+    <div id="projects" className={styles.projectContainer}>
+      <h2 className={styles.heading}>🎯 Projects</h2>
       <div className={styles.project}>
         {projectData.map((data) => (
           <div key={data.id} className={styles.card}>

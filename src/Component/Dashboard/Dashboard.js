@@ -9,12 +9,14 @@ import About from "../About/About";
 import Home from "../Home/Home";
 import Footer from "../Common/Footer/Footer";
 import Contact from "../Contact/Contact";
+import Navigation from "../Common/Navigation/Navigation";
 
 const Dashboard = () =>{
     return (
         <Fragment>
           <main>
-            <MainHeader />
+            {/* <MainHeader /> */}
+            <Navigation />
             <PageContent>              
             </PageContent> 
             <Home />
