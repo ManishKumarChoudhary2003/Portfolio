@@ -16,7 +16,7 @@
     padding: 10px;
     transition: transform 0.3s ease-in-out;
     width: 800px;
-    margin: 30px;
+    margin: 20px;
   }
   
   .card:hover {
@@ -75,9 +75,9 @@
   /* Media Query for Small Screens */
   @media only screen and (max-width: 600px) {
     .card {
-      width: 100%;
+      width: 300px;
       /* Make the card full width on small screens */
-      margin-top: 20px;
+      margin: 50px;
       /* Adjust margin for spacing */
     }
   }

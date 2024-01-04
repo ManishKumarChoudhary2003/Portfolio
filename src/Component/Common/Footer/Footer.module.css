@@ -101,14 +101,7 @@
     background-color: black;
   }
   
-  /* Media query for small screens */
-  @media only screen and (max-width: 768px) {
-    .upButton {
-      bottom: 10px;
-      right: 10px;
-      font-size: 1.2rem;
-    }
-  }
+  
 
   /* Media query for small screens */
   @media only screen and (max-width: 768px) {
@@ -124,6 +117,11 @@
   
     .links {
       margin-top: 20px;
+    }
+    .upButton {
+      bottom: 10px;
+      margin: 50px;
+      font-size: 1.2rem;
     }
   }
   

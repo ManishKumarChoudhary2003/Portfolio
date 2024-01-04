@@ -1,71 +1,64 @@
-/* Navigation.module.css */
-
-.navigation {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    background-color: #222121;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    color: #fff;
-}
-
-.nameDisplay {
-  display: flex;
-  align-items: center;
-}
-
-.nameDisplay h1 {
-  margin: 0;
-  cursor: pointer;
-}
-.nameDisplay img{
-    height: 2rem;
-    width: 2rem;
-}
-
-.nameDisplay span {
-  margin-right: 5px;  
-}
+ .navigation {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     padding: 20px;
+     background-color: #222121;
+     position: fixed;
+     width: 100%;
+     top: 0;
+     z-index: 1000;
+     color: #fff;
+ }
 
 
-.navItems {
-    display: flex;
-}
 
-.navItem {
-    text-decoration: none; 
-    color: #fff;
-    margin: 0 10px;
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 5px;
-    background-color: #222121;
-    transition: background-color 0.3s ease-in-out;
-}
+ .nameDisplay {
+     display: flex;
+     align-items: center;
+ }
 
-.navItem:hover { 
-    color: chocolate;
-    background-color: #222121;
-    text-decoration: underline; 
-}
+ .nameDisplay h1 {
+     margin: 0;
+     cursor: pointer;
+ }
 
-/* button{
-    color: white;
-    font-weight: bold;
-}
-button:hover{
-    color: chocolate;
-} */
+ .nameDisplay img {
+     height: 2rem;
+     width: 2rem;
+ }
 
-/* Media query for small screens */
-@media only screen and (max-width: 768px) {
+ .nameDisplay span {
+     margin-right: 5px;
+ }
+
+
+ .navItems {
+     display: flex; 
+ }
+
+ .navItem {
+     text-decoration: none;
+     color: #fff;
+     margin: 0 10px;
+     padding: 10px;
+     font-weight: bold;
+     border-radius: 5px;
+     background-color: #222121;
+     transition: background-color 0.3s ease-in-out;
+ }
+
+ .navItem:hover {
+     color: chocolate;
+     background-color: #222121;
+     text-decoration: underline;
+ }
+ 
+
+ @media only screen and (max-width: 768px) {
     .navigation {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column;  
+        text-align:center;
     }
 
     .navItems {

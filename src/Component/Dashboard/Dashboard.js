@@ -1,6 +1,6 @@
 import { Fragment } from "react"; 
 import PageContent from "../Common/PageContent/PageContent";
-import MainHeader from "../Common/Header/MainHeader";
+// import MainHeader from "../Common/Header/MainHeader";
 import Project from "../Project/Project";
 import Experience from "../Experience/Experience";
 import Education from "../Education/Education";
@@ -9,6 +9,7 @@ import About from "../About/About";
 import Home from "../Home/Home";
 import Footer from "../Common/Footer/Footer";
 import Contact from "../Contact/Contact";
+// import Navbar from "../Common/Navbar/Navbar";
 import Navigation from "../Common/Navigation/Navigation";
 
 const Dashboard = () =>{
@@ -17,6 +18,7 @@ const Dashboard = () =>{
           <main>
             {/* <MainHeader /> */}
             <Navigation />
+            {/* <Navbar /> */}
             <PageContent>              
             </PageContent> 
             <Home />
