@@ -14,13 +14,14 @@
 .homeContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 600px;
+  height: 700px; 
   color: white;
+  /* background-color: red; */
   animation: fadeIn 0.5s ease-in-out both;
 }
 
 .intro {
-  padding: 150px;
+  padding: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,9 +42,9 @@
 .introRole {
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Great Vibes', cursive;
-  font-style: oblique;
-  color: rgb(219, 97, 97);
+  /* font-family: 'Great Vibes', cursive; */
+  /* font-style: oblique; */
+  color: #7C52D1;
   /* Set initial state */
   opacity: 0;
   transform: translateX(-100%);

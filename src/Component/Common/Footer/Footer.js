@@ -6,6 +6,7 @@ import Instagram from "../../../assets/insta.jpeg";
 import github from "../../../assets/github.png";
 import Email from "../../../assets/email.png";
 import Resume from "../../../assets/resume.png";
+import leetcode from "../../../assets/leetcode.png"
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -161,6 +162,13 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <img src={github} alt="Github" />
+            </a>
+            <a
+              href="https://leetcode.com/Manish_193/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={leetcode} alt="leetcode" />
             </a>
             <a
               href="https://www.instagram.com/manish_.96/"

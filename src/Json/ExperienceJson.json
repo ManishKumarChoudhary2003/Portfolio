@@ -6,8 +6,8 @@
     "startDate": "Oct 2022",
     "endDate": "present",
     "location": "Jodhpur,Rajasthan",
-    "point_1": "SAS Institute is an American multinational developer of analytics software based in Cary, North Carolina.",
-    "point_2": "Specializing in Data Science with a focus on SAS (Statistical Analysis System).",
+    "point_1": "Skilled in leveraging SAS Visual Analytics for data exploration, analysis, and report generation.",
+    "point_2": "Adept at creating impactful reports with interactive features using SAS Visual Analytics tools.",
     "skills": "SAS Studio, Data Science, SAS"
   },
   {
@@ -17,8 +17,8 @@
     "startDate": "May 2023",
     "endDate": "June 2023",
     "location": "Jaipur,Rajasthan",
-    "point_1": "Zeetron Networks is a reputed company that provides the best Quality Software Development and products in India.",
-    "point_2": "Learnt the real-world application of data science and built analytical models that enhance business outcomes.",
+    "point_1": "Utilized machine learning algorithms to analyze data, gaining valuable experience in ML applications.",
+    "point_2": "Worked hands-on with data science libraries to implement machine learning solutions effectively.",
     "skills": "NumPy, pandas, Matplotlib, Seaborn, Machine Learning Algorithms, Python, Data Analysis"
   },
   {
@@ -39,8 +39,8 @@
     "startDate": "June 2022",
     "endDate": "Jul 2022",
     "location": "Jodhpur,Rajasthan",
-    "point_1": "I have received formal training in frontend development, gaining proficiency in HTML and CSS to create visually appealing and interactive user interfaces.",
-    "point_2": "I have acquired a strong foundation in C++, enhancing my skills in problem-solving.",
+    "point_1": "Trained in HTML and CSS for creating engaging and responsive interfaces, ensuring a solid foundation in frontend development.",
+    "point_2": "Acquired a basic understanding of C++, demonstrating proficiency in problem-solving.",
     "skills": "Html, CSS, JavaScipt, C++"
   }
 ]

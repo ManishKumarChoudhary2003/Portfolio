@@ -192,7 +192,7 @@ const Contact = () => {
             {formErrors.message && (
               <span className={styles.error}>{formErrors.message}</span>
             )}
-
+              
             <button type="submit">Submit ✈️</button>
           </form>
         </div>

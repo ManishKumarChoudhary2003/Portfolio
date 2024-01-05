@@ -24,8 +24,8 @@
 }
 
 .bar {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 10px;
     text-align: center;
 }
@@ -37,7 +37,7 @@
 
 .info {
     background-color: #f4f4f4;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

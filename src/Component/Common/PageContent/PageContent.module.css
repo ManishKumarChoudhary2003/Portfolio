@@ -1,9 +1,9 @@
 .content {
-    margin-top: 50px;
+    margin-top: 40px;
   }
   
   @media screen and (max-width: 768px) {
     .content {
-      margin-top: 350px; 
+      margin-top: 70px; 
     }
   }

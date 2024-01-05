@@ -9,6 +9,7 @@ import Manish from "../../assets/Manishk.png";
 import styles from "./Home.module.css";
 import Email from "../../assets/email.png";
 import Resume from "../../assets/resume.png";
+import leetcode from "../../assets/leetcode.png"
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
           Hi There👋,
           <br /> I'm Manish Kumar Choudhary
         </h1>
-        <p className={styles.introRole}>Java Full Stack Developer 💻</p>
+        <p className={styles.introRole}>Java Full Stack Developer ♨️</p>
         <p className={styles.introPara}>
           I focus on developing user-friendly web applications that meet the
           client's requirements, with attention to detail, scalability, and
@@ -39,6 +40,13 @@ const Home = () => {
           >
             <img src={github} alt="Github" />
           </a>
+          <a
+              href="https://leetcode.com/Manish_193/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={leetcode} alt="leetcode" />
+            </a>
           <a
             href="https://www.instagram.com/manish_.96/"
             target="_blank"

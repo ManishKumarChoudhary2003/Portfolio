@@ -9,16 +9,16 @@ import About from "../About/About";
 import Home from "../Home/Home";
 import Footer from "../Common/Footer/Footer";
 import Contact from "../Contact/Contact";
-// import Navbar from "../Common/Navbar/Navbar";
-import Navigation from "../Common/Navigation/Navigation";
+import Navbar from "../Common/Navbar/Navbar";
+// import Navigation from "../Common/Navigation/Navigation";
 
 const Dashboard = () =>{
     return (
         <Fragment>
           <main>
             {/* <MainHeader /> */}
-            <Navigation />
-            {/* <Navbar /> */}
+            {/* <Navigation /> */}
+            <Navbar />
             <PageContent>              
             </PageContent> 
             <Home />
