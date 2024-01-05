@@ -16,7 +16,7 @@
   grid-template-columns: 1fr 1fr;
   height: 700px; 
   color: white;
-  /* background-color: red; */
+  margin-bottom: 50px; 
   animation: fadeIn 0.5s ease-in-out both;
 }
 
