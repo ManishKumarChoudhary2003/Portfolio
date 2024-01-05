@@ -43,13 +43,13 @@ nav {
 }
 
 .nameDisplay img {
-    height: 2rem;
-    width: 2rem;
+    height: 5rem;
+    width: 5rem;
 }
 
-.nameDisplay span {
-    margin-right: 5px;
-}
+/* .nameDisplay span {
+    margin-right: 0px;
+} */
 
 
 .nav-links {
