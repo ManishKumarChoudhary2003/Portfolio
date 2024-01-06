@@ -56,7 +56,7 @@ const About = () => {
           <div className={styles.resumeBtn}>
             <div className={styles.resumeBtn}>
               <a
-                href="https://drive.google.com/file/d/1m2OBP_81-09GR8mST30NeRCWqt7j2Cdx/view?usp=sharing"
+                href="https://drive.google.com/file/d/1mPC4eBVn79W1MCwA1wzdGoxvKYptjl2Z/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.btn}
