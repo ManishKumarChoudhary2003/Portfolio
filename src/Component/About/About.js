@@ -1,4 +1,3 @@
-// About.js
 import React from "react";
 import styles from "./About.module.css";
 
@@ -56,7 +55,7 @@ const About = () => {
           <div className={styles.resumeBtn}>
             <div className={styles.resumeBtn}>
               <a
-                href="https://drive.google.com/file/d/1mPC4eBVn79W1MCwA1wzdGoxvKYptjl2Z/view?usp=sharing"
+                href="https://drive.google.com/uc?export=view&id=15EyRiv0h1TkLRfSPpS7ntz3CIpmyqrHl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.btn}

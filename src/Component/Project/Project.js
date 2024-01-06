@@ -1,4 +1,3 @@
-// Project.js
 import React from "react";
 import Json from "../../Json/projectJson.json";
 import styles from "./Project.module.css";
@@ -16,7 +15,6 @@ const Project = () => {
               <p className={styles.title}>{data.title}</p>
               <p>👉 {data.dsc.point_1}</p>
               <p>👉 {data.dsc.point_2}</p>
-              {/* <p>3. {data.dsc.point_3}</p> */}
               <div className={styles.links}>
                 <a
                   href={data.links.view}

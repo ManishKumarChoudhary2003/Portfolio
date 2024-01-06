@@ -1,4 +1,3 @@
-/* Home.module.css */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -14,9 +13,9 @@
 .homeContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 700px; 
+  height: 700px;
   color: white;
-  margin-bottom: 100px; 
+  margin-bottom: 100px;
   animation: fadeIn 0.5s ease-in-out both;
 }
 
@@ -42,14 +41,9 @@
 .introRole {
   font-size: 1.5rem;
   font-weight: bold;
-  /* font-family: 'Great Vibes', cursive; */
-  /* font-style: oblique; */
   color: #7C52D1;
-  /* Set initial state */
   opacity: 0;
   transform: translateX(-100%);
-
-  /* Apply animation */
   animation: slideInLeft 3s forwards;
 }
 
@@ -114,7 +108,6 @@
 }
 
 
-/* Media query for small screens */
 @media only screen and (max-width: 768px) {
   .homeContainer {
     grid-template-columns: 1fr;
@@ -139,37 +132,8 @@
     width: 150px;
   }
 
-  /* Reset the hover effect for small screens */
   .image img:hover,
   .links img:hover {
     transform: translateX(10);
   }
 }
-
-
-
-/* Media query for small screens */
-/* @media only screen and (max-width: 768px) {
-  .homeContainer {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .intro {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .links {
-    justify-content: center;
-  }
-
-  .image {
-    margin-top: 20px;
-  }
-
-  .image img {
-    height: 150px;
-    width: 150px;
-  }
-} */

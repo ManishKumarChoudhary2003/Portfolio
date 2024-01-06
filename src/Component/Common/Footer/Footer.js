@@ -1,4 +1,3 @@
-// Footer.js
 import React, { useEffect, useState } from "react";
 import styles from "./Footer.module.css";
 import linkedln from "../../../assets/linkedln.png";
@@ -6,7 +5,7 @@ import Instagram from "../../../assets/insta.jpeg";
 import github from "../../../assets/github.png";
 import Email from "../../../assets/email.png";
 import Resume from "../../../assets/resume.png";
-import leetcode from "../../../assets/leetcode.png"
+import leetcode from "../../../assets/leetcode.png";
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -19,14 +18,13 @@ const Footer = () => {
   const [showButton, setShowButton] = useState(true);
 
   const scrollToTop = () => {
-    setShowButton(false); // Hide the button
+    setShowButton(false);
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
 
-  // Handle scroll events to show/hide the button
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setShowButton(true);
@@ -35,11 +33,9 @@ const Footer = () => {
     }
   };
 
-  // Attach scroll event listener
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener when component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -100,35 +96,13 @@ const Footer = () => {
             >
               🔗Contact
             </button>
-            {/* <a href="#home">
-              <i className="fas fa-chevron-circle-right"></i>🔗 Home
-            </a>
-            <a href="#about">
-              <i className="fas fa-chevron-circle-right"></i>🔗 About
-            </a>
-            <a href="#skills">
-              <i className="fas fa-chevron-circle-right"></i>🔗 Skills
-            </a>
-            <a href="#projects">
-              <i className="fas fa-chevron-circle-right"></i>🔗 projects
-            </a>
-            <a href="#experience">
-              <i className="fas fa-chevron-circle-right"></i>🔗 Experience
-            </a>
-            <a href="#education">
-              <i className="fas fa-chevron-circle-right"></i>🔗 Education
-            </a>
-
-            <a href="#contact">
-              <i className="fas fa-chevron-circle-right"></i>🔗 contact
-            </a> */}
           </div>
         </div>
         {showButton && (
-        <button onClick={scrollToTop} className={styles.upButton}>
-        <p>☝️</p>
-        </button>
-      )}
+          <button onClick={scrollToTop} className={styles.upButton}>
+            <p>☝️</p>
+          </button>
+        )}
 
         <div className={styles.column}>
           <h3>Contact Info </h3>
@@ -185,7 +159,7 @@ const Footer = () => {
               <img src={Email} alt="Email" />
             </a>
             <a
-              href="https://drive.google.com/file/d/1mPC4eBVn79W1MCwA1wzdGoxvKYptjl2Z/view?usp=sharing"
+              href="https://drive.google.com/uc?export=view&id=15EyRiv0h1TkLRfSPpS7ntz3CIpmyqrHl"
               target="_blank"
               rel="noopener noreferrer"
             >

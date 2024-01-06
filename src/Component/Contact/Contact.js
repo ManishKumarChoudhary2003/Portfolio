@@ -1,4 +1,3 @@
-// Contact.js
 import React, { useState } from "react";
 import styles from "./Contact.module.css";
 import contactlogo from "../../assets/contact.png";
@@ -39,7 +38,6 @@ const Contact = () => {
     let valid = true;
     const newFormErrors = { ...formErrors };
 
-    // Name validation
     if (!formData.name.trim()) {
       newFormErrors.name = "Name is required";
       valid = false;
@@ -50,7 +48,6 @@ const Contact = () => {
       newFormErrors.name = "";
     }
 
-    // Email validation
     if (!formData.email.trim()) {
       newFormErrors.email = "Email is required";
       valid = false;
@@ -61,7 +58,6 @@ const Contact = () => {
       newFormErrors.email = "";
     }
 
-    // Phone validation
     if (!formData.phone.trim()) {
       newFormErrors.phone = "Phone is required";
       valid = false;
@@ -72,7 +68,6 @@ const Contact = () => {
       newFormErrors.phone = "";
     }
 
-    // Message validation
     if (!formData.message.trim()) {
       newFormErrors.message = "Message is required";
       valid = false;
@@ -192,7 +187,7 @@ const Contact = () => {
             {formErrors.message && (
               <span className={styles.error}>{formErrors.message}</span>
             )}
-              
+
             <button type="submit">Submit ✈️</button>
           </form>
         </div>

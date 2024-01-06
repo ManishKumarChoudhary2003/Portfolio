@@ -1,15 +1,12 @@
-// Home.js
 import React from "react";
 import github from "../../assets/github.png";
 import linkedln from "../../assets/linkedln.png";
 import Instagram from "../../assets/insta.jpeg";
-// import Manish from "../../assets/ManishC.jpg"
-import Manish from "../../assets/Manishk.png";
-// import Manish from "../../assets/Manish.jpg";
+import Manish from "../../assets/Manish.png";
 import styles from "./Home.module.css";
 import Email from "../../assets/email.png";
 import Resume from "../../assets/resume.png";
-import leetcode from "../../assets/leetcode.png"
+import leetcode from "../../assets/leetcode.png";
 
 const Home = () => {
   return (
@@ -41,12 +38,12 @@ const Home = () => {
             <img src={github} alt="Github" />
           </a>
           <a
-              href="https://leetcode.com/Manish_193/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={leetcode} alt="leetcode" />
-            </a>
+            href="https://leetcode.com/Manish_193/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={leetcode} alt="leetcode" />
+          </a>
           <a
             href="https://www.instagram.com/manish_.96/"
             target="_blank"
@@ -61,13 +58,15 @@ const Home = () => {
           >
             <img src={Email} alt="Email" />
           </a>
+
           <a
-            href="https://drive.google.com/file/d/1mPC4eBVn79W1MCwA1wzdGoxvKYptjl2Z/view?usp=sharing"
+            href="https://drive.google.com/uc?export=view&id=15EyRiv0h1TkLRfSPpS7ntz3CIpmyqrHl"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={Resume} alt="Resume" />
           </a>
+          {/* Google Drive Link-- > https://drive.google.com/file/d/15EyRiv0h1TkLRfSPpS7ntz3CIpmyqrHl/view?usp=drive_link */}
         </div>
       </div>
       <div className={styles.image}>

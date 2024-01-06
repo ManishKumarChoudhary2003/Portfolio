@@ -1,86 +1,80 @@
-/* Education.module.css */
-
 .education {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .heading {
-    font-size: 3.0rem;
-    color: #0fa8f4;
-    margin-top: 150px; 
-    text-align: center;
-  }
-  .heading img{
-    width: 40px;
-    margin-right: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 
-  .line{
-    color: white;
-    text-align: center;
-  }
-  
+.heading {
+  font-size: 3.0rem;
+  color: #0fa8f4;
+  margin-top: 150px;
+  text-align: center;
+}
+
+.heading img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.line {
+  color: white;
+  text-align: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  width: 700px;
+  margin: 30px;
+}
+
+
+
+.card:hover {
+  transform: scale(0.9) rotateY(40deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card h1 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.card h2,
+.card h3 {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.grade {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+
+
+@media only screen and (max-width: 600px) {
   .card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: auto;
-    padding: 20px;
-    transition: transform 0.3s ease-in-out;
-    width: 700px; /* Set a width for the card */
-    margin: 30px; /* Add margin for spacing */
+    width: 300px;
+    margin-top: 20px;
   }
-  
-    
-  /* .card:hover {
-    transform: scale(0.9) rotate(-3deg);
-    transition: transform 0.1s ease-in-out;
-  } */
 
-  .card:hover {
-    transform: scale(0.9) rotateY(40deg); 
-    transition: transform 0.3s ease-in-out;
+  .card:hover::before {
+    transform: skewX(0deg);
   }
-  
-  .card-content {
-    padding: 16px;
+
+  .line {
+    margin: 50px;
   }
-  
-  .card h1 {
-    font-size: 1.9rem;
-    margin-bottom: 8px;
-  }
-  
-  .card h2,
-  .card h3 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-bottom: 8px;
-  }
-  
-  .grade {
-    margin-top: 8px;
-    font-size: 1.1rem;
-    color: #555;
-  }
-  
- 
-  
-  /* Media Query for Small Screens */
-  @media only screen and (max-width: 600px) {
-    .card {
-      width: 300px; /* Make the card full width on small screens */
-      margin-top: 20px; /* Adjust margin for spacing */
-    }
-  
-    .card:hover::before {
-      transform: skewX(0deg);
-    }
-    .line{
-      margin: 50px;
-    }
-  }
-  
+}

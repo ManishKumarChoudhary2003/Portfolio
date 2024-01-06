@@ -1,7 +1,6 @@
-// Skills.js
 import React from "react";
 import Json from "../../Json/SkillsJson.json";
-import styles from "./Skills.module.css"; 
+import styles from "./Skills.module.css";
 
 const Skills = () => {
   const skillData = Json;
