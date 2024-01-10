@@ -58,14 +58,14 @@ const Home = () => {
           >
             <img src={Email} alt="Email" />
           </a>
-
           <a
-            href="https://drive.google.com/uc?export=view&id=15EyRiv0h1TkLRfSPpS7ntz3CIpmyqrHl"
+            href="https://drive.google.com/uc?export=download&id=1rc4Kvu89gHkq3QPLIFMUM1m1shJ8vSDm"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
           >
             <img src={Resume} alt="Resume" />
           </a>
+
           {/* Google Drive Link-- > https://drive.google.com/file/d/15EyRiv0h1TkLRfSPpS7ntz3CIpmyqrHl/view?usp=drive_link */}
         </div>
       </div>
