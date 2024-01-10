@@ -30,14 +30,14 @@
   padding: 20px;
   transition: transform 0.3s ease-in-out;
   width: 700px;
-  margin: 30px;
+  margin: 10px;
 }
 
 
 
 .card:hover {
-  transform: scale(0.9) rotateY(40deg);
-  transition: transform 0.3s ease-in-out;
+  transform: scale(0.9) rotateY(10deg);
+  transition: transform 0.1s ease-in-out;
 }
 
 .card-content {

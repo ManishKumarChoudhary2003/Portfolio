@@ -46,7 +46,7 @@
 }
 
 .box {
-    background-color: #ffffff;
+    background-color: #ADADAD;
     padding: 20px;
     color: black;
     border-radius: 8px;
@@ -57,6 +57,7 @@
 
 .box p {
     margin: 0;
+    color: black;
 }
 
 
