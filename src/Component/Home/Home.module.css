@@ -73,9 +73,9 @@
   border-radius: 50%;
 }
 
-.image img:hover {
+/* .image img:hover {
   transform: translateX(30px);
-}
+} */
 
 .links img:hover {
   transform: translateY(-10px);

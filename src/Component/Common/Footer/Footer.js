@@ -159,7 +159,7 @@ const Footer = () => {
               <img src={Email} alt="Email" />
             </a>
             <a
-              href="https://drive.google.com/uc?export=download&id=1HrSnqIbI-qYcUxBzkGSs6Fbp7x90nZvZ"
+              href="https://drive.google.com/uc?export=download&id=1XZuVGEZqr6jbZrKjoheyptJ5uH6YXyrO"
               target="_blank"
               rel="noopener noreferrer"
             >

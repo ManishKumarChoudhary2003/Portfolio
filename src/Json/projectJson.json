@@ -1,6 +1,20 @@
 [
   {
     "id": 1,
+    "title": "Form Fusion",
+    "image": "https://cdn.jotfor.ms/assets/img/landing/minimals/interactive-forms/introduction.svg",
+    "dsc": {
+      "point_1": "Form Fusion integrates Java Spring Boot and ReactJS for streamlined form creation and analysis, prioritizing user experience.",
+      "point_2": "Secure user authentication via JSON Web Tokens (JWT) and MySQL database utilization ensure data integrity and scalability.",
+      "point_3": "By leveraging MySQL’s capabilities, Form Fusion effortlessly handles large volumes of responses and form data, ensuring smooth and scalable operations."
+    },
+    "links": {
+      "view": "https://form-fusion.netlify.app/",
+      "code": "https://github.com/Manishkumarchoudhary2003/Form-Fusion"
+    }
+  },
+  {
+    "id": 2,
     "title": "Laptop Galaxy(E-Commerce)",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO1lBizkxc-UlPYBVjADZ00KBuGceZjfM8KAOIoe-3CC_nJDPFj6vApv8n1p8mrAA4SbM&usqp=CAU",
     "dsc": {
@@ -14,7 +28,21 @@
     }
   },
   {
-    "id": 2,
+    "id": 3,
+    "title": "Personal Portfolio",
+    "image": "https://www.notion.so/cdn-cgi/image/format=webp,width=3840,quality=80/https://s3.us-west-2.amazonaws.com/public.notion-static.com/creator-images/design_with_naren-1707771878461.png",
+    "dsc": {
+      "point_1": "Developed a dynamic portfolio using React to highlight skills, projects, and professional journey.",
+      "point_2": "Firebase-managed contact info ensures reliability; quick links and responsive design enhance user experience.",
+      "point_3": "Implemented quick links and responsive design for efficient navigation, ensuring a visually appealing and user-friendly experience."
+    },
+    "links": {
+      "view": "https://manish-kumar-choudhary.netlify.app/",
+      "code": "https://github.com/Manishkumarchoudhary2003/Portfolio"
+    }
+  },
+  {
+    "id": 4,
     "title": "Expense Tracker",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlgL8KTBA9dcyyofxx-7PzSCrs96qiD6WyUA&usqp=CAU",
     "dsc": {
@@ -26,9 +54,36 @@
       "view": "https://react-application-expense-tracker.netlify.app/",
       "code": "https://github.com/Manishkumarchoudhary2003/ExpenseTracker"
     }
+  }, {
+    "id": 5,
+    "title": "Student Management System",
+    "image": "https://5.imimg.com/data5/DR/WM/YA/SELLER-50831584/student-information-system.png",
+    "dsc": {
+      "point_1": "Student Management System built with Java Spring Boot facilitates seamless CRUD operations for efficient data management.",
+      "point_2": "Utilizes an in-memory H2 database for efficient data storage and retrieval, ensuring optimal system performance.",
+      "point_3": "Frontend, developed with JSP and JSTL, ensures a user-friendly experience, enhancing accessibility and usability."
+    },
+    "links": {
+      "view": "https://www.linkedin.com/feed/update/urn:li:activity:7138875219984777216/",
+      "code": "https://github.com/Manishkumarchoudhary2003/Student-Management-System"
+    }
   },
   {
-    "id": 3,
+    "id": 6,
+    "title": "RealTime ChatRoom",
+    "image": "https://img-b.udemycdn.com/course/480x270/4269776_a135_2.jpg",
+    "dsc": {
+      "point_1": "Real-time chat application developed with Spring Boot and WebSocket technology enables live messaging over the web.",
+      "point_2": "Backend, powered by Spring Boot, offers RESTful endpoints to manage WebSocket connections and message exchanges.",
+      "point_3": "Seamlessly facilitates user engagement through live messaging with efficient backend architecture."
+    },
+    "links": {
+      "view": "https://www.linkedin.com/feed/update/urn:li:activity:7165385994312138753/",
+      "code": "https://github.com/Manishkumarchoudhary2003/Real-Time-ChatRoom"
+    }
+  },
+  {
+    "id": 7,
     "title": "Zomato Website Design",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn0qN4eblTT704CJR7aP61YjIkJv-J5gplFw&usqp=CAU",
     "dsc": {
@@ -40,5 +95,5 @@
       "view": "https://github.com/Manishkumarchoudhary2003/-Zomato_WebDesign",
       "code": "https://github.com/Manishkumarchoudhary2003/-Zomato_WebDesign"
     }
-  }   
+  }
 ]
