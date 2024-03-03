@@ -9,7 +9,12 @@ const Project = () => {
       <h2 className={styles.heading}>🎯 Projects</h2>
       <div className={styles.project}>
         {projectData.map((data) => (
-          <div key={data.id} className={styles.card}>
+          <div
+            key={data.id}
+            className={styles.card}
+            onClick={() => window.open(data.links.view, "_blank")}
+            style={{ cursor: "pointer" }}
+          >
             <img src={data.image} alt={data.title} />
             <div className={styles["card-content"]}>
               <p className={styles.title}>{data.title}</p>
