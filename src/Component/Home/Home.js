@@ -2,7 +2,7 @@ import React from "react";
 import github from "../../assets/github.png";
 import linkedln from "../../assets/linkedln.png";
 import Instagram from "../../assets/insta.jpeg";
-import Manish from "../../assets/Manish.png";
+import Manish from "../../assets/Manish.jpg";
 import styles from "./Home.module.css";
 import Email from "../../assets/email.png";
 import Resume from "../../assets/resume.png";
