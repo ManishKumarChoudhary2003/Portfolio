@@ -12,10 +12,13 @@ const Project = () => {
           <div
             key={data.id}
             className={styles.card}
-            onClick={() => window.open(data.links.view, "_blank")}
             style={{ cursor: "pointer" }}
           >
-            <img src={data.image} alt={data.title} />
+            <img
+              src={data.image}
+              alt={data.title}
+              onClick={() => window.open(data.links.view, "_blank")}
+            />
             <div className={styles["card-content"]}>
               <p className={styles.title}>{data.title}</p>
               <p>👉 {data.dsc.point_1}</p>
