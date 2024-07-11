@@ -11,7 +11,7 @@ const About = () => {
 
         <div className={styles.content}>
           <h1>I'm Manish Kumar Choudhary</h1>
-          <span className={styles.tag}>Java Full Stack Developer</span>
+          <span className={styles.tag}>Java Backend Developer</span>
 
           <p>
             <span role="img" aria-label="Hello">

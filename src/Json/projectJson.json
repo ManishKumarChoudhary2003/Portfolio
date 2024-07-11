@@ -54,7 +54,8 @@
       "view": "https://react-application-expense-tracker.netlify.app/",
       "code": "https://github.com/Manishkumarchoudhary2003/ExpenseTracker"
     }
-  }, {
+  },
+  {
     "id": 5,
     "title": "Student Management System",
     "image": "https://5.imimg.com/data5/DR/WM/YA/SELLER-50831584/student-information-system.png",
@@ -84,6 +85,20 @@
   },
   {
     "id": 7,
+    "title": "Library Inventory",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsotx0yl9toWsKi5q-m0NHZMxwpooCYxgIXA&s",
+    "dsc": {
+      "point_3": "Allows librarians to effortlessly add new books, update existing records, and search by title or author.",
+      "point_2": "Combines Spring Boot, H2 database, Hibernate, and JPA to enable efficient and easy management of book records.",
+      "point_1": "Uses Kafka to provide instant notifications on inventory changes, ensuring up-to-date information for librarians."
+    },
+    "links": {
+      "view": "https://www.linkedin.com/feed/update/urn:li:activity:7214590186834317313/",
+      "code": "https://github.com/ManishKumarChoudhary2003/Library-Inventory"
+    }
+  },
+  {
+    "id": 8,
     "title": "Zomato Website Design",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn0qN4eblTT704CJR7aP61YjIkJv-J5gplFw&usqp=CAU",
     "dsc": {

@@ -16,7 +16,7 @@ const Home = () => {
           Hi There👋,
           <br /> I'm Manish Kumar Choudhary
         </h1>
-        <p className={styles.introRole}>Java Full Stack Developer ♨️</p>
+        <p className={styles.introRole}>Java Backend Developer ♨️</p>
         <p className={styles.introPara}>
           I focus on developing user-friendly web applications that meet the
           client's requirements, with attention to detail, scalability, and

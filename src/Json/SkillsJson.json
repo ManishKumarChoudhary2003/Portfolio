@@ -1,109 +1,124 @@
 [
   {
     "id": 1,
-    "name": "React",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn4m55WNKObcXKR64vGqxRmKJcFy09buDo7A&usqp=CAU"
-  },
-  {
-    "id": 2,
-    "name": "Redux",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1TV5eo-6euWLdHTkKKTOIoZdW1FbyWkkXPej-TzIR6YR97qzNADjPA0x1hu6mThlknRs&usqp=CAU"
-  },
-  {
-    "id": 3,
     "name": "Java",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZl6wfVBXFuAupsrA0il3GjzC-_Jp8YDxD1A&usqp=CAU"
   },
+
   {
-    "id": 4,
-    "name": "JavaScript",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgP904DuXesgey20f7AligEGGTHCw_g6ad2A&usqp=CAU"
-  },
-  {
-    "id": 5,
+    "id": 2,
     "name": "Spring",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzRZJEZ7Unl0nlHXGmvt3ng3ke4pCciTD8HxE5nzOn_4T5lPwyAcXlIBRNbPY4PXqnXgw&usqp=CAU"
   },
   {
-    "id": 6,
+    "id": 3,
     "name": "Spring boot",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ80I1U3HiPgPEFElGDPz3EZhwJnt45aPfL-Q&usqp=CAU"
   },
   {
-    "id": 7,
+    "id": 4,
+    "name": "Microservices",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWSJ-uHt00kui2aAqlejSD9_MGJJzE0PbyZA&s"
+  },
+  {
+    "id": 5,
     "name": "Spring Security",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeEi0VC6zkBD07ORVg0oaRvkrDzszT0MBMYQ&usqp=CAU"
   },
   {
+    "id": 6,
+    "name": "Spring Cloud",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXoAo5rBkHd89JA204-v0PVLpY-jN71gJXvA&s"
+  },
+  {
+    "id": 7,
+    "name": "Apache Kafka",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-wlc5bS6KhmOyfDnWCx3k866Ak_9VuJ-Qgg&s"
+  },
+  {
     "id": 8,
+    "name": "Docker",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1VrymvWgkfMMHx3kOXpwcg9qB9Z2TcRGrxA&s"
+  },
+  {
+    "id": 9,
     "name": "Hibernate",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYS9XJY54UMtTZHGzMhdbvuG9rRfSh-cVN6d2s6AW_xlxGL34aIFFAFS5JhG2G6r_OH48&usqp=CAU"
   },
   {
-    "id": 9,
+    "id": 10,
     "name": "JPA",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5HaEqoQICy6n81TNTjmSL3wx4Ne9HyeGmIg&usqp=CAU"
   },
   {
-    "id": 10,
+    "id": 11,
+    "name": "React",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn4m55WNKObcXKR64vGqxRmKJcFy09buDo7A&usqp=CAU"
+  },
+  {
+    "id": 12,
+    "name": "JavaScript",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgP904DuXesgey20f7AligEGGTHCw_g6ad2A&usqp=CAU"
+  },
+  {
+    "id": 13,
+    "name": "Redux",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1TV5eo-6euWLdHTkKKTOIoZdW1FbyWkkXPej-TzIR6YR97qzNADjPA0x1hu6mThlknRs&usqp=CAU"
+  },
+  {
+    "id": 14,
     "name": "MySql",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdtRtDfxlqeUXXt60abBGKKJxxbxKy7cMTJQ&usqp=CAU"
   },
   {
-    "id": 11,
+    "id": 15,
     "name": "C",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxcV3m3ERALQ3NXlSfteu3v4YT-900JjfN57Rot5GYQ536bi3ADala_OqaDXh6QV3n2oI&usqp=CAU"
   },
 
   {
-    "id": 12,
+    "id": 16,
     "name": "Python",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm_reiBXGjK4KUI-Lk4S5cfcmHC3i_CqqmrA&usqp=CAU"
   },
   {
-    "id": 13,
+    "id": 17,
     "name": "HTML5",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCkGtWTEmE027BTAeQQ-6SC3vpTZ8OZZq98Q&usqp=CAU"
   },
   {
-    "id": 14,
+    "id": 18,
     "name": "CSS3",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNPTiA1EBTXbPUVeEV834kXaeHM314wkEzIw&usqp=CAU"
   },
   {
-    "id": 15,
+    "id": 19,
     "name": "Firebase",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu3Nwqd3xnrhdjZ5H4HZZ5oIHdiHqI7Hqu8Q&usqp=CAU"
   },
   {
-    "id": 16,
+    "id": 20,
     "name": "Maven",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw3b1V2y7hZBb_NM3BYnxl-qBkeCO42_zO4g&usqp=CAU"
   },
   {
-    "id": 17,
+    "id": 21,
     "name": "Intellij",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReKGgNdffAPAZ5wZG7RinV2QB3pxmYS1lSFg&usqp=CAU"
   },
   {
-    "id": 18,
+    "id": 22,
     "name": "Eclipse",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJkRMnfZBJ2vzxh03oNKqxCTH8IxIqvih_5w&usqp=CAU"
   },
   {
-    "id": 19,
+    "id": 23,
     "name": "VS Code",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPgXkceBK_cL30ob_zxQapZYwDsDSIMM6tcA&usqp=CAU"
   },
   {
-    "id": 20,
+    "id": 24,
     "name": "Netlify",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwXED7lKcJJDs71uYAZYrqxaoSb4ERWmHVEYi9GiJ5GSWqE1bpFm0DPJZVzVOCaTQRGGs&usqp=CAU"
-  },
-
-  {
-    "id": 21,
-    "name": "Jupyter",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA98wD7BoEfV4j4fdbk4Z4PaqE3lxs5risOQ&usqp=CAU"
   }
 ]
