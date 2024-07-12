@@ -18,7 +18,7 @@
 
 .card:hover {
   transform: scale(0.9) rotate(-1deg);
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .card-content {
@@ -47,6 +47,11 @@
 .card h3 {
   font-size: 0.9rem;
   color: #888;
+}
+
+.card h4 {
+  font-size: 0.8rem;
+  color: #4779d7;
 }
 
 .card hr {

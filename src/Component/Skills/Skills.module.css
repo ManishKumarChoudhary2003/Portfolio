@@ -13,6 +13,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuVycTk2QgWc6wQ00ecVRD7cqOpGpIyTKktQ&s");
+    background-size: cover;  
+    background-position: center;   */
 }
 
 .row {

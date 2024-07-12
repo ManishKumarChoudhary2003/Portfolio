@@ -15,6 +15,7 @@ const Experience = () => {
             <div className={styles["card-content"]}>
               <h1>{data.title} 📜</h1>
               <h2>{data.role} 👩‍💻</h2>
+              <h4>{data.startDate} - {data.endDate}</h4>
               <h3>{data.location} 📍</h3>
               <div className={styles.additionalPoints}>
                 <p className={styles.point}>👉 {data.point_1}</p>
