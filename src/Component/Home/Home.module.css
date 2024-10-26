@@ -68,14 +68,16 @@
 }
 
 .image img {
-  height: 400px;
-  width: 400px;
-  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+  border-radius: 100%;
+  transition: transform 0.1s ease;
 }
 
-/* .image img:hover {
-  transform: translateX(30px);
-} */
+.image:hover img {
+  transform: scale(1.3);
+}
+
 
 .links img:hover {
   transform: translateY(-10px);

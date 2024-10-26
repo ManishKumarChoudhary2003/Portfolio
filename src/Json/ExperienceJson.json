@@ -6,8 +6,8 @@
     "startDate": "May 2024",
     "endDate": "present",
     "location": "Bengaluru, Karnataka",
-    "point_1": "Developed and maintained Java backend services within a microservices architecture for the Markify application.",
-    "point_2": "• Implemented dynamic ID card generation for farmers using Feign clients, storing generated ID card URLs securely in AWS S3.",
+    "point_1": "Developed and maintained Java backend services within a microservices architecture for the Changemaker Application.",
+    "point_2": "Optimized RESTful APIs and integrated Apache Solr and Elasticsearch to enhance data search performance and eﬃciency.",
     "skills": "Java, Spring boot, Microservices, Spring Security, Hibernate, JPA, Kafka, Docker, Mysql"
   },
   {

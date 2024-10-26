@@ -4,7 +4,6 @@
     "name": "Java",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZl6wfVBXFuAupsrA0il3GjzC-_Jp8YDxD1A&usqp=CAU"
   },
-
   {
     "id": 2,
     "name": "Spring",
@@ -31,9 +30,24 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXoAo5rBkHd89JA204-v0PVLpY-jN71gJXvA&s"
   },
   {
+    "id": 27,
+    "name": "Linux",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB6EBLbrU9NDICDf5JhGSugw5VDfJOYqOECg&s"
+  },
+  {
     "id": 7,
     "name": "Apache Kafka",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-wlc5bS6KhmOyfDnWCx3k866Ak_9VuJ-Qgg&s"
+  },
+  {
+    "id": 25,
+    "name": "Apache Solr",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNDCBOk_YPISdAHI1DqnME7Dj4kGp-QuDa6w&s"
+  },
+  {
+    "id": 26,
+    "name": "Elastic Search",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTirkDP48FDCGTtPKnwWCEq1euxxkqX-M-VTw&s"
   },
   {
     "id": 8,
@@ -49,6 +63,11 @@
     "id": 10,
     "name": "JPA",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5HaEqoQICy6n81TNTjmSL3wx4Ne9HyeGmIg&usqp=CAU"
+  },
+  {
+    "id": 20,
+    "name": "Maven",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw3b1V2y7hZBb_NM3BYnxl-qBkeCO42_zO4g&usqp=CAU"
   },
   {
     "id": 11,
@@ -71,12 +90,6 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdtRtDfxlqeUXXt60abBGKKJxxbxKy7cMTJQ&usqp=CAU"
   },
   {
-    "id": 15,
-    "name": "C",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxcV3m3ERALQ3NXlSfteu3v4YT-900JjfN57Rot5GYQ536bi3ADala_OqaDXh6QV3n2oI&usqp=CAU"
-  },
-
-  {
     "id": 16,
     "name": "Python",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm_reiBXGjK4KUI-Lk4S5cfcmHC3i_CqqmrA&usqp=CAU"
@@ -97,24 +110,9 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu3Nwqd3xnrhdjZ5H4HZZ5oIHdiHqI7Hqu8Q&usqp=CAU"
   },
   {
-    "id": 20,
-    "name": "Maven",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw3b1V2y7hZBb_NM3BYnxl-qBkeCO42_zO4g&usqp=CAU"
-  },
-  {
     "id": 21,
     "name": "Intellij",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReKGgNdffAPAZ5wZG7RinV2QB3pxmYS1lSFg&usqp=CAU"
-  },
-  {
-    "id": 22,
-    "name": "Eclipse",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJkRMnfZBJ2vzxh03oNKqxCTH8IxIqvih_5w&usqp=CAU"
-  },
-  {
-    "id": 23,
-    "name": "VS Code",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPgXkceBK_cL30ob_zxQapZYwDsDSIMM6tcA&usqp=CAU"
   },
   {
     "id": 24,
