@@ -1,0 +1,547 @@
+/* Animation Keyframes */
+@keyframes footerAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(180deg);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(102, 126, 234, 0.8);
+    }
+}
+
+/* Main Footer */
+.footer {
+    position: relative;
+    background: #0a0a0f;
+    padding: 2.5rem 0 1rem;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Background Elements */
+.backgroundElements {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.gradient1 {
+    position: absolute;
+    top: -20%;
+    left: 20%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: float 6s ease-in-out infinite;
+}
+
+.gradient2 {
+    position: absolute;
+    bottom: -20%;
+    right: 20%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(118, 75, 162, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+.gradient3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: float 10s ease-in-out infinite;
+}
+
+.floatingParticles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 8s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+    top: 20%;
+    left: 15%;
+    animation-duration: 6s;
+}
+
+.particle:nth-child(2) {
+    top: 60%;
+    right: 20%;
+    animation-duration: 8s;
+    animation-direction: reverse;
+}
+
+.particle:nth-child(3) {
+    bottom: 30%;
+    left: 25%;
+    animation-duration: 7s;
+}
+
+.particle:nth-child(4) {
+    top: 40%;
+    right: 30%;
+    animation-duration: 9s;
+    animation-direction: reverse;
+}
+
+.particle:nth-child(5) {
+    bottom: 60%;
+    left: 60%;
+    animation-duration: 5s;
+}
+
+.particle:nth-child(6) {
+    top: 70%;
+    right: 50%;
+    animation-duration: 7s;
+    animation-direction: reverse;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Footer Content */
+.footerMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Social Section */
+.socialSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.titleIcon {
+    font-size: 1rem;
+}
+
+.socialGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.socialLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.socialLink:hover::before {
+    left: 100%;
+}
+
+.socialLink:hover {
+    background: rgba(102, 126, 234, 0.08);
+    border-color: rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.socialIconWrapper {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.socialIcon {
+    font-size: 0.9rem;
+}
+
+.socialLabel {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #a0a9c0;
+}
+
+.socialHoverEffect {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.socialLink:hover .socialHoverEffect {
+    opacity: 1;
+}
+
+/* Navigation Section */
+.navSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.quickNavigation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: #a0a9c0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.navLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.navLink:hover::before {
+    left: 100%;
+}
+
+.navLink:hover {
+    background: rgba(102, 126, 234, 0.08);
+    border-color: rgba(102, 126, 234, 0.2);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.navLinkText {
+    position: relative;
+    z-index: 2;
+}
+
+.navLinkEffect {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navLink:hover .navLinkEffect {
+    opacity: 1;
+}
+
+/* Footer Bottom */
+.footerBottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1rem;
+}
+
+.simpleFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footerText {
+    font-size: 0.85rem;
+    color: #a0a9c0;
+    font-weight: 500;
+}
+
+.footerDivider {
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+}
+
+/* Scroll to Top Button */
+.scrollToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.scrollToTop::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #0a0a0f;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.scrollIcon {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.scrollToTop:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+.scrollToTop:hover .scrollIcon {
+    transform: translateY(-2px);
+}
+
+.scrollRipple {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.scrollToTop:active .scrollRipple {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Animation Classes */
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animateOnScroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .gradient1,
+    .gradient2,
+    .gradient3 {
+        filter: blur(60px);
+        opacity: 0.5;
+    }
+
+    .footerMain {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .footerMain {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .socialGrid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .quickNavigation {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .socialLink {
+        padding: 0.7rem 0.8rem;
+    }
+
+    .navLink {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .sectionTitle {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .simpleFooter {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .scrollToTop {
+        width: 45px;
+        height: 45px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 0 0.8rem;
+    }
+
+    .socialLink {
+        padding: 0.6rem;
+        gap: 0.6rem;
+    }
+
+    .socialIconWrapper {
+        width: 28px;
+        height: 28px;
+    }
+
+    .socialIcon {
+        font-size: 0.8rem;
+    }
+
+    .socialLabel {
+        font-size: 0.8rem;
+    }
+
+    .navLink {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .quickNavigation {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
