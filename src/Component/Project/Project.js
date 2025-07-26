@@ -93,14 +93,22 @@ const Project = () => {
 
               <div className={styles.cardContent}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
+
                 <p className={styles.projectDescription}>
-                  {project.dsc.point_1.length > 100
-                    ? project.dsc.point_1.substring(0, 100) + "..."
-                    : project.dsc.point_1}
+                  {project.dsc.point_1}
+                </p>
+                <p className={styles.projectDescription}>
+                  {project.dsc.point_2}
                 </p>
 
-                {/* Technology Badges */}
-                {project.technologies && (
+
+                {/* <p className={styles.projectDescription}>
+                  {project.dsc.point_1.length > 100
+                    ? project.dsc.point_1.substring(0, 1000) + "..."
+                    : project.dsc.point_1}
+                </p> */}
+
+                {/* {project.technologies && (
                   <div className={styles.techBadges}>
                     {project.technologies.map((tech, index) => (
                       <span key={index} className={styles.techBadge}>
@@ -108,7 +116,7 @@ const Project = () => {
                       </span>
                     ))}
                   </div>
-                )}
+                )} */}
               </div>
             </div>
           ))}
@@ -119,7 +127,7 @@ const Project = () => {
             <div className={styles.statItem}>
               <div className={styles.statIcon}>💻</div>
               <div className={styles.statContent}>
-                <h3 className={styles.statNumber}>{projectData.length}+</h3>
+                <h3 className={styles.statNumber}>{projectData.length}</h3>
                 <p className={styles.statLabel}>Projects</p>
               </div>
             </div>

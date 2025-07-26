@@ -55,6 +55,16 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1VrymvWgkfMMHx3kOXpwcg9qB9Z2TcRGrxA&s"
   },
   {
+    "id": 8,
+    "name": "Git",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGp2RKrzqJF2Cu3dxnk2RGK_F7SSloJG-Wyw&s"
+  },
+  {
+    "id": 8,
+    "name": "Github",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdPxa43wCZ11KANKhuPh8J4cpT1gs_B1S5ow&s"
+  },
+  {
     "id": 9,
     "name": "Hibernate",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYS9XJY54UMtTZHGzMhdbvuG9rRfSh-cVN6d2s6AW_xlxGL34aIFFAFS5JhG2G6r_OH48&usqp=CAU"
@@ -63,6 +73,16 @@
     "id": 10,
     "name": "JPA",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5HaEqoQICy6n81TNTjmSL3wx4Ne9HyeGmIg&usqp=CAU"
+  },
+  {
+    "id": 14,
+    "name": "MySql",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXizOekeei5tf2Z8KG1_DI-hjwgLEttS-M9A&s"
+  },
+  {
+    "id": 25,
+    "name": "Redis",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMbuTCnPv7wAsOzmJ8x24tK7Wgbz6SfccUKQ&s"
   },
   {
     "id": 20,
@@ -83,11 +103,6 @@
     "id": 13,
     "name": "Redux",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1TV5eo-6euWLdHTkKKTOIoZdW1FbyWkkXPej-TzIR6YR97qzNADjPA0x1hu6mThlknRs&usqp=CAU"
-  },
-  {
-    "id": 14,
-    "name": "MySql",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdtRtDfxlqeUXXt60abBGKKJxxbxKy7cMTJQ&usqp=CAU"
   },
   {
     "id": 16,
@@ -117,6 +132,6 @@
   {
     "id": 24,
     "name": "Netlify",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwXED7lKcJJDs71uYAZYrqxaoSb4ERWmHVEYi9GiJ5GSWqE1bpFm0DPJZVzVOCaTQRGGs&usqp=CAU"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrvwgpiqc9FrNeVcW-NQekpPIwIcktyys_nw&s"
   }
 ]

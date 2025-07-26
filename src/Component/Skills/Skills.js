@@ -18,10 +18,10 @@ const Skills = () => {
       ["React", "JavaScript", "Redux", "HTML5", "CSS3"].includes(skill.name)
     ),
     database: skillData.filter(skill =>
-      ["MySql", "Firebase"].includes(skill.name)
+      ["MySql", "Firebase", "Redis"].includes(skill.name)
     ),
     tools: skillData.filter(skill =>
-      ["Docker", "Intellij", "Netlify", "Linux"].includes(skill.name)
+      ["Docker", "Git", "Github", "Intellij", "Netlify", "Linux"].includes(skill.name)
     )
   }), [skillData]);
 
