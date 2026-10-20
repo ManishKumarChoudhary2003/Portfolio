@@ -1,252 +1,253 @@
-/* Footer Styles */
+/* The footer is an ink block in both themes, so it reads as the page's closing band */
 .footer {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-top: 1px solid rgba(102, 126, 234, 0.2);
-  padding: 3rem 0 1.5rem;
+  --f-bg: #161714;
+  --f-text: #ece8de;
+  --f-muted: #a8a295;
+  --f-line: rgba(236, 232, 222, 0.12);
+  --f-accent: #86c7a6;
+
   position: relative;
-  overflow: hidden;
+  padding-top: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  background: var(--f-bg);
+  color: var(--f-text);
 }
 
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
-  pointer-events: none;
+:global([data-theme="dark"]) .footer {
+  --f-bg: #0c0d0b;
+  border-top: 1px solid var(--line);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  position: relative;
-  z-index: 2;
+.footer :focus-visible {
+  outline-color: var(--f-accent);
 }
 
-.content {
+/* Closing call to action */
+.cta {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-  margin-bottom: 2.5rem;
+  gap: var(--s-5);
+  align-items: end;
+  padding-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
+  border-bottom: 1px solid var(--f-line);
 }
 
-/* Brand Section */
-.brand {
-  text-align: left;
+@media (min-width: 900px) {
+  .cta {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--s-7);
+  }
 }
 
-.brandName {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.ctaTitle {
+  max-width: 18ch;
+  font-size: clamp(1.9rem, 1.2rem + 2.8vw, 3.2rem);
+  color: var(--f-text);
 }
 
-.brandTitle {
-  font-size: 1rem;
-  color: #94a3b8;
-  font-weight: 500;
+.ctaTitle em {
+  font-style: italic;
+  color: var(--f-accent);
 }
 
-/* Social Section */
-.social {
-  text-align: right;
-}
-
-.sectionTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  margin-bottom: 1rem;
-}
-
-.socialLinks {
+.ctaActions {
   display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
   flex-wrap: wrap;
+  gap: var(--s-3);
 }
 
-.socialLink {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
-  color: #e2e8f0;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.socialLink:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-  color: #ffffff;
-}
-
-.socialIcon {
-  font-size: 1.1rem;
-}
-
-.socialLabel {
-  font-size: 0.85rem;
-}
-
-/* Footer Bottom */
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.copyright {
-  color: #94a3b8;
-  font-size: 0.9rem;
-}
-
-.love {
-  color: #94a3b8;
-  font-size: 0.9rem;
-}
-
-/* Scroll to Top Button */
-.scrollToTop {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  display: flex;
+.button {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-  transition: all 0.3s ease;
-  z-index: 1000;
+  gap: var(--s-2);
+  min-height: 46px;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--f-line);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--f-text);
+  transition: background-color var(--dur-fast) ease, border-color var(--dur-fast) ease, color var(--dur-fast) ease,
+    transform var(--dur) var(--ease-out);
 }
 
-.scrollToTop:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
-}
-
-.scrollToTop svg {
-  transition: transform 0.3s ease;
-}
-
-.scrollToTop:hover svg {
+.button:hover {
+  border-color: var(--f-text);
   transform: translateY(-2px);
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .footer {
-    padding: 2rem 0 1rem;
-  }
+.buttonPrimary {
+  border-color: transparent;
+  background: var(--f-accent);
+  color: #0f1a14;
+}
 
-  .container {
-    padding: 0 1rem;
-  }
-
-  .content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .brand,
-  .social {
-    text-align: center;
-  }
-
-  .socialLinks {
-    justify-content: center;
-    gap: 0.75rem;
-  }
-
-  .socialLink {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.85rem;
-  }
-
-  .socialLabel {
-    display: none;
-  }
-
-  .socialIcon {
-    font-size: 1.2rem;
-  }
-
-  .bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-
-  .scrollToTop {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 45px;
-    height: 45px;
-  }
+.buttonPrimary:hover {
+  border-color: transparent;
+  background: #a9dabf;
 }
 
 @media (max-width: 480px) {
-  .footer {
-    padding: 1.5rem 0 1rem;
+  .button {
+    flex: 1 1 100%;
+  }
+}
+
+/* Link columns */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-6) var(--s-5);
+  padding-block: clamp(2.5rem, 2rem + 3vw, 4rem);
+}
+
+.brand {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+  max-width: 24rem;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 0.85fr)) minmax(0, 1.3fr);
   }
 
-  .container {
-    padding: 0 0.5rem;
+  .brand {
+    grid-column: auto;
   }
+}
 
-  .brandName {
-    font-size: 1.5rem;
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 44px;
+  font-weight: 500;
+}
+
+.blurb {
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--f-muted);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--fs-sm);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--f-accent);
+  box-shadow: 0 0 0 4px rgba(134, 199, 166, 0.15);
+}
+
+/* Phones: the contact details get a full row so the email and phone don't wrap */
+@media (max-width: 759px) {
+  .contactColumn {
+    grid-column: 1 / -1;
   }
+}
 
-  .brandTitle {
-    font-size: 0.9rem;
+.heading {
+  margin-bottom: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--f-muted);
+}
+
+.list {
+  display: grid;
+}
+
+.link,
+.plain {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 40px;
+  font-size: var(--fs-sm);
+  color: var(--f-text);
+}
+
+.plain {
+  color: var(--f-muted);
+}
+
+.link {
+  transition: color var(--dur-fast) ease, transform var(--dur) var(--ease-out);
+}
+
+.link:hover {
+  color: var(--f-accent);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    transform: translateX(3px);
   }
+}
 
-  .sectionTitle {
-    font-size: 1rem;
+.wrap {
+  overflow-wrap: anywhere;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--f-muted);
+}
+
+.link:hover .icon {
+  color: inherit;
+}
+
+.arrow {
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: opacity var(--dur-fast) ease, transform var(--dur) var(--ease-out);
+}
+
+.link:hover .arrow,
+.link:focus-visible .arrow {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: none) {
+  .arrow {
+    opacity: 0.6;
+    transform: none;
   }
+}
 
-  .socialLinks {
-    gap: 0.5rem;
-  }
+/* Bottom bar */
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-2) var(--s-5);
+  padding-block: var(--s-5) calc(var(--s-5) + 64px);
+  border-top: 1px solid var(--f-line);
+  font-size: var(--fs-xs);
+  color: var(--f-muted);
+}
 
-  .socialLink {
-    padding: 0.5rem;
-  }
-
-  .scrollToTop {
-    bottom: 1rem;
-    right: 1rem;
-    width: 40px;
-    height: 40px;
+@media (min-width: 760px) {
+  .bottom {
+    padding-bottom: var(--s-5);
   }
 }

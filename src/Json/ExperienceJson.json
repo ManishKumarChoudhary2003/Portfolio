@@ -1,57 +1,30 @@
 [
   {
     "id": 1,
-    "title": "Platform Commons",
-    "role": "Java Backend Development",
+    "company": "Platform Commons",
+    "role": "Software Engineer",
     "startDate": "May 2024",
-    "endDate": "present",
-    "location": "Bengaluru, Karnataka",
-    "point_1": "Developed and maintained Java backend services within a microservices architecture for the Changemaker Application.",
-    "point_2": "Optimized RESTful APIs and integrated Apache Solr and Elasticsearch to enhance data search performance and eﬃciency.",
-    "skills": "Java, Spring boot, Microservices, Spring Security, Hibernate, JPA, Kafka, Docker, Mysql"
+    "endDate": "Present",
+    "location": "Bengaluru, India",
+    "points": [
+      "Develop and maintain **15+ production-grade microservices** in Java and Spring Boot, delivering scalable REST APIs for the VMS (volunteer management) platform.",
+      "Reduced API response latency by **25%** through query optimisation and Redis caching, with data persisted in MySQL via Spring Data JPA and Hibernate.",
+      "Integrated Elasticsearch indexing across large datasets, cutting search retrieval latency by **40%**.",
+      "Introduced event-driven communication between services with Apache Kafka to decouple them and enable asynchronous processing.",
+      "Built an internal **distributed job scheduler SDK** that prevents duplicate job execution across service instances, adopted as a drop-in dependency by other teams."
+    ],
+    "skills": ["Java", "Spring Boot", "Kafka", "Elasticsearch", "Redis", "MySQL", "Spring Data JPA", "Docker"]
   },
   {
     "id": 2,
-    "title": "Statistical Analysis System (SAS)",
-    "role": "Data Analysis",
-    "startDate": "Oct 2022",
-    "endDate": "Mar 2024",
-    "location": "Jodhpur,Rajasthan",
-    "point_1": "Skilled in leveraging SAS Visual Analytics for data exploration, analysis, and report generation.",
-    "point_2": "Adept at creating impactful reports with interactive features using SAS Visual Analytics tools.",
-    "skills": "SAS Studio, Data Science, SAS"
-  },
-  {
-    "id": 3,
-    "title": "Research Intern - Zeetron Networks",
-    "role": "Data Science with Machine Learning",
+    "company": "Zeetron Networks",
+    "role": "Research Intern, Data Science & Machine Learning",
     "startDate": "May 2023",
-    "endDate": "June 2023",
-    "location": "Jaipur,Rajasthan",
-    "point_1": "Utilized machine learning algorithms to analyze data, gaining valuable experience in ML applications.",
-    "point_2": "Worked hands-on with data science libraries to implement machine learning solutions effectively.",
-    "skills": "NumPy, pandas, Matplotlib, Seaborn, Machine Learning Algorithms, Python, Data Analysis"
-  },
-  {
-    "id": 4,
-    "title": "Internshala Trainee",
-    "role": "Android Development",
-    "startDate": "May 2023",
-    "endDate": "Jul 2023",
-    "location": "Remote",
-    "point_1": "Developed expertise in utilizing Kotlin for Android app development, incorporating modern technologies and frameworks to create robust and efficient applications.",
-    "point_2": "Acquired skills in UI/UX design, data management, API integration, testing, debugging, and deployment, ensuring end-to-end proficiency in the Android app development lifecycle.",
-    "skills": "Kotlin, Databases, Android Development, Android Studio"
-  },
-  {
-    "id": 5,
-    "title": "Jodhpur Institute of Engineering and Technology, Jodhpur",
-    "role": "Frontend Development",
-    "startDate": "June 2022",
-    "endDate": "Jul 2022",
-    "location": "Jodhpur,Rajasthan",
-    "point_1": "Trained in HTML and CSS for creating engaging and responsive interfaces, ensuring a solid foundation in frontend development.",
-    "point_2": "Acquired a basic understanding of C++, demonstrating proficiency in problem-solving.",
-    "skills": "Html, CSS, JavaScipt, C++"
+    "endDate": "Jun 2023",
+    "location": "Jaipur, India",
+    "points": [
+      "Built and evaluated machine learning models in Python with pandas and scikit-learn, visualising datasets and model performance with Matplotlib."
+    ],
+    "skills": ["Python", "pandas", "scikit-learn", "Matplotlib"]
   }
 ]

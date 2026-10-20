@@ -1,443 +1,164 @@
-.experience {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  min-height: 100vh;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.experience::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
 .timeline {
   position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 0;
+  display: grid;
+  gap: var(--s-6);
 }
 
-.timelineLine {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-  transform: translateX(-50%);
-  border-radius: 2px;
-  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
-}
-
-.timelineItem {
+.job {
   position: relative;
-  margin-bottom: 60px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  grid-template-areas:
+    "marker when"
+    "marker what";
+  column-gap: var(--s-4);
+  row-gap: var(--s-3);
 }
 
-.timelineItem.visible {
-  opacity: 1;
-  transform: translateY(0);
+@media (min-width: 820px) {
+  .job {
+    grid-template-columns: 11rem 20px minmax(0, 1fr);
+    grid-template-areas: "when marker what";
+    column-gap: var(--s-6);
+  }
 }
 
-.timelineDot {
-  position: absolute;
-  left: 50%;
-  top: 30px;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+/* Vertical rail connecting the entries */
+.job::before {
+  content: "";
+  grid-area: marker;
+  justify-self: center;
+  width: 1px;
+  margin-top: 14px;
+  margin-bottom: calc(var(--s-6) * -1);
+  background: var(--line-strong);
+}
+
+.job:last-child::before {
+  margin-bottom: 0;
+}
+
+.marker {
+  grid-area: marker;
+  justify-self: center;
+  width: 13px;
+  height: 13px;
+  margin-top: 6px;
   border-radius: 50%;
-  border: 4px solid #0f172a;
-  z-index: 10;
-  box-shadow: 0 0 15px rgba(102, 126, 234, 0.6);
+  border: 2px solid var(--text-3);
+  background: var(--bg-alt);
 }
 
-.experienceCard {
-  width: 450px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 30px;
-  position: relative;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+.current .marker {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
 }
 
-.experienceCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+.when {
+  grid-area: when;
 }
 
-.timelineItem.right {
-  display: flex;
-  justify-content: flex-end;
+.dates {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--text);
 }
 
-.timelineItem.right .experienceCard {
-  margin-left: calc(50% + 30px);
-  text-align: left;
+.current .dates {
+  color: var(--accent);
 }
 
-.timelineItem.right .experienceCard::after {
-  content: '';
-  position: absolute;
-  top: 30px;
-  left: -15px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 15px solid rgba(255, 255, 255, 0.1);
+.place {
+  font-size: var(--fs-sm);
+  color: var(--text-3);
 }
 
-.cardHeader {
-  margin-bottom: 20px;
+.what {
+  grid-area: what;
+  display: grid;
+  gap: var(--s-3);
+  padding: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: box-shadow var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
 }
 
-.dateRange {
-  display: inline-block;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.location {
-  color: #94a3b8;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.role {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 8px;
-  line-height: 1.3;
+.what:hover {
+  box-shadow: var(--shadow);
 }
 
 .company {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #667eea;
-  margin-bottom: 20px;
+  font-size: var(--fs-xl);
 }
 
-.description {
-  margin-bottom: 20px;
-}
-
-.descriptionItem {
-  color: #cbd5e1;
-  margin-bottom: 8px;
-  line-height: 1.5;
-  font-size: 0.95rem;
-}
-
-.technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tech {
-  background: rgba(102, 126, 234, 0.2);
-  color: #e2e8f0;
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 0.8rem;
+.role {
   font-weight: 500;
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  transition: all 0.3s ease;
+  color: var(--text-2);
 }
 
-.tech:hover {
-  background: rgba(102, 126, 234, 0.4);
-  transform: translateY(-2px);
+.points {
+  display: grid;
+  gap: var(--s-3);
+  margin-block: var(--s-2);
+  max-width: 68ch;
+  color: var(--text-2);
 }
 
-.noExperience {
-  text-align: center;
-  padding: 60px 40px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  max-width: 500px;
-  margin: 0 auto;
+.points li {
+  position: relative;
+  padding-left: 1.4rem;
 }
 
-.noExperience h3 {
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: 16px;
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: rotate(45deg);
+  opacity: 0.8;
 }
 
-.noExperience p {
-  color: #cbd5e1;
-  line-height: 1.6;
+.points strong {
+  color: var(--text);
+  background: linear-gradient(transparent 62%, var(--ochre-soft) 62%);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .header {
-    margin-bottom: 60px;
-  }
-
-  .timeline {
-    padding: 30px 0;
-  }
-
-  .experienceCard {
-    width: 400px;
-    padding: 24px;
-  }
-
-  .role {
-    font-size: 1.3rem;
-  }
-
-  .company {
-    font-size: 1rem;
-  }
-
-  .dateRange {
-    font-size: 0.85rem;
-  }
+/* Motion: the rail draws down and the marker pops in as each entry is revealed */
+:global(.motion-ok) .job::before {
+  transform-origin: top;
+  transition: transform 1200ms var(--ease-out) 200ms;
 }
 
-@media (max-width: 768px) {
-  .experience {
-    padding: 60px 0;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-
-  .header {
-    margin-bottom: 40px;
-  }
-
-  .title {
-    font-size: clamp(2rem, 6vw, 2.5rem);
-  }
-
-  .subtitle {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .timeline {
-    padding: 20px 0;
-  }
-
-  .timelineLine {
-    left: 20px;
-  }
-
-  .timelineItem {
-    margin-bottom: 40px;
-  }
-
-  .timelineItem.left,
-  .timelineItem.right {
-    padding-left: 50px;
-    padding-right: 0;
-    display: block;
-    justify-content: flex-start;
-  }
-
-  .timelineItem.left .experienceCard,
-  .timelineItem.right .experienceCard {
-    margin-left: 0;
-    margin-right: 0;
-    width: calc(100% - 50px);
-    max-width: 400px;
-  }
-
-  .timelineItem.right .experienceCard::after {
-    display: none;
-  }
-
-  .timelineDot {
-    left: 20px;
-    transform: translateX(-50%);
-  }
-
-  .experienceCard {
-    padding: 20px;
-  }
-
-  .role {
-    font-size: 1.2rem;
-  }
-
-  .company {
-    font-size: 0.95rem;
-  }
-
-  .dateRange {
-    font-size: 0.8rem;
-  }
-
-  .descriptionItem {
-    font-size: 0.9rem;
-  }
-
-  .tech {
-    font-size: 0.75rem;
-    padding: 3px 10px;
-  }
+:global(.motion-ok) .job:not(:global(.is-revealed))::before {
+  transform: scaleY(0);
 }
 
-@media (max-width: 480px) {
-  .experience {
-    padding: 40px 0;
-  }
+:global(.motion-ok) .marker {
+  transition: transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 150ms;
+}
 
-  .container {
-    padding: 0 8px;
-  }
+:global(.motion-ok) .job:not(:global(.is-revealed)) .marker {
+  transform: scale(0);
+}
 
-  .header {
-    margin-bottom: 30px;
-  }
+:global(.motion-ok) .points li {
+  transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+  transition-delay: calc(300ms + var(--pi, 0) * 90ms);
+}
 
-  .title {
-    font-size: clamp(1.8rem, 8vw, 2.2rem);
-  }
+:global(.motion-ok) .job:not(:global(.is-revealed)) .points li {
+  opacity: 0;
+  transform: translateX(-10px);
+}
 
-  .subtitle {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    padding: 0 5px;
-  }
-
-  .timelineItem {
-    margin-bottom: 30px;
-  }
-
-  .timelineItem.left,
-  .timelineItem.right {
-    padding-left: 40px;
-  }
-
-  .timelineItem.left .experienceCard,
-  .timelineItem.right .experienceCard {
-    width: calc(100% - 40px);
-    max-width: none;
-  }
-
-  .timelineDot {
-    left: 15px;
-    width: 12px;
-    height: 12px;
-    top: 25px;
-  }
-
-  .timelineLine {
-    left: 15px;
-    width: 2px;
-  }
-
-  .experienceCard {
-    padding: 16px;
-  }
-
-  .role {
-    font-size: 1.1rem;
-  }
-
-  .company {
-    font-size: 0.9rem;
-  }
-
-  .dateRange {
-    font-size: 0.75rem;
-    padding: 6px 12px;
-  }
-
-  .location {
-    font-size: 0.8rem;
-  }
-
-  .descriptionItem {
-    font-size: 0.85rem;
-    margin-bottom: 6px;
-  }
-
-  .technologies {
-    gap: 6px;
-  }
-
-  .tech {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-  }
-
-  .noExperience {
-    padding: 40px 20px;
-  }
-
-  .noExperience h3 {
-    font-size: 1.3rem;
-  }
-
-  .noExperience p {
-    font-size: 0.9rem;
+@media (hover: none) {
+  .what:hover {
+    box-shadow: none;
   }
 }

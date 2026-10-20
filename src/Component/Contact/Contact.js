@@ -1,398 +1,315 @@
-
-import React, { useRef, useState, useEffect } from "react";
-import styles from "./Contact.module.css";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { FiAlertCircle, FiArrowUpRight, FiCheck, FiCheckCircle, FiCopy, FiSend } from "react-icons/fi";
+import SectionHeader from "../Common/SectionHeader/SectionHeader";
+import profile from "../../Json/profile.json";
+import styles from "./Contact.module.css";
+
+const EMAIL = profile.email;
+
+const channels = [
+  { label: "LinkedIn", value: "in/manishkumarchoudhary", href: profile.links.linkedin },
+  { label: "GitHub", value: "Manishkumarchoudhary2003", href: profile.links.github },
+  { label: "LeetCode", value: "Manish_193", href: profile.links.leetcode },
+  { label: "Phone", value: profile.phone.display, href: profile.phone.href },
+  ...(profile.resumeUrl
+    ? [{ label: "Resume", value: "View PDF", href: `${process.env.PUBLIC_URL}${profile.resumeUrl}`, newTab: true }]
+    : []),
+];
+
+const emptyForm = { name: "", email: "", phone: "", message: "" };
+
+const MIN_MESSAGE = 10;
+
+// Short, specific messages; an empty string means the field is valid.
+const validators = {
+  name: (v) => {
+    if (!v.trim()) return "Enter your name";
+    if (!/^[A-Za-z][A-Za-z\s.'-]*$/.test(v.trim())) return "Letters only, please";
+    return "";
+  },
+  email: (v) => {
+    if (!v.trim()) return "Enter your email";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())) return "Enter a valid email";
+    return "";
+  },
+  phone: (v) => {
+    const digits = v.replace(/\D/g, "");
+    if (!digits) return "Enter your phone number";
+    const local = digits.length === 12 && digits.startsWith("91") ? digits.slice(2) : digits;
+    if (local.length !== 10) return "Use a 10-digit number";
+    return "";
+  },
+  message: (v) => {
+    const length = v.trim().length;
+    if (!length) return "Write a short message";
+    if (length < MIN_MESSAGE) return `Add ${MIN_MESSAGE - length} more character${MIN_MESSAGE - length === 1 ? "" : "s"}`;
+    return "";
+  },
+};
+
+const validate = (data) =>
+  Object.fromEntries(Object.keys(validators).map((key) => [key, validators[key](data[key])]));
+
+const allTouched = { name: true, email: true, phone: true, message: true };
+
+const fields = [
+  { name: "name", label: "Name", type: "text", autoComplete: "name" },
+  { name: "email", label: "Email", type: "email", autoComplete: "email" },
+  { name: "phone", label: "Phone", type: "tel", autoComplete: "tel", inputMode: "tel" },
+];
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [formErrors, setFormErrors] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const [formData, setFormData] = useState(emptyForm);
+  const [touched, setTouched] = useState({});
+  const [dodge, setDodge] = useState(0); // horizontal offset of the locked Send button
+  const trackRef = useRef(null);
+  const buttonRef = useRef(null);
+  const pointerType = useRef("mouse");
+  const [status, setStatus] = useState("idle"); // idle | submitting | success | error
+  const [copyState, setCopyState] = useState("idle"); // idle | copied | failed
   const form = useRef();
-  const contactRef = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.visible);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    if (copyState === "idle") return undefined;
+    const timer = setTimeout(() => setCopyState("idle"), 2500);
+    return () => clearTimeout(timer);
+  }, [copyState]);
 
-    const elements = contactRef.current?.querySelectorAll(`.${styles.animateOnScroll}`);
-    elements?.forEach((element) => observer.observe(element));
+  useEffect(() => {
+    if (status !== "success") return undefined;
+    const timer = setTimeout(() => setStatus("idle"), 6000);
+    return () => clearTimeout(timer);
+  }, [status]);
 
-    return () => {
-      elements?.forEach((element) => observer.unobserve(element));
-    };
-  }, []);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        'service_0p7j6uq',
-        'template_1y0fxp8',
-        form.current,
-        'IMVKX8RBjNb8nOTwo'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          showSuccess();
-        },
-        (error) => {
-          console.log(error.text);
-          setIsSubmitting(false);
-        }
-      );
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopyState("copied");
+    } catch {
+      setCopyState("failed");
+    }
   };
 
-  const showSuccess = () => {
-    setShowSuccessMessage(true);
-    setIsSubmitting(false);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
-    setTimeout(() => {
-      setShowSuccessMessage(false);
-    }, 5000);
-  };
+  const errors = validate(formData);
+  const remaining = Object.values(errors).filter(Boolean).length;
+  const isValid = remaining === 0;
+
+  // Once everything is valid, the button settles back into place.
+  useEffect(() => {
+    if (isValid) setDodge(0);
+  }, [isValid]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (status === "error") setStatus("idle");
+  };
 
-    if (formErrors[name]) {
-      setFormErrors({
-        ...formErrors,
-        [name]: "",
-      });
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    if (value) setTouched((prev) => ({ ...prev, [name]: true }));
+  };
+
+  // The locked button slips to the other end of its track.
+  const slipAway = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const track = trackRef.current;
+    const button = buttonRef.current;
+    if (!track || !button) return;
+    const max = Math.max(track.clientWidth - button.offsetWidth, 0);
+    setDodge((offset) => (offset > 0 ? 0 : max));
+  };
+
+  const revealErrors = (moveFocus) => {
+    setTouched(allTouched);
+    if (moveFocus) {
+      const firstInvalid = Object.keys(errors).find((key) => errors[key]);
+      form.current?.elements[firstInvalid]?.focus();
     }
   };
 
-  const validateForm = () => {
-    let valid = true;
-    const newFormErrors = { ...formErrors };
+  // A mouse can't catch the locked button, so hovering it is when we explain what's missing.
+  const onSendPointerEnter = (e) => {
+    if (isValid || e.pointerType !== "mouse") return;
+    revealErrors(false);
+    slipAway();
+  };
 
-    if (!formData.name.trim()) {
-      newFormErrors.name = "Name is required";
-      valid = false;
-    } else if (!/^[A-Za-z\s]+$/.test(formData.name)) {
-      newFormErrors.name = "Invalid Name";
-      valid = false;
-    } else {
-      newFormErrors.name = "";
-    }
-
-    if (!formData.email.trim()) {
-      newFormErrors.email = "Email is required";
-      valid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newFormErrors.email = "Invalid email format";
-      valid = false;
-    } else {
-      newFormErrors.email = "";
-    }
-
-    if (!formData.phone.trim()) {
-      newFormErrors.phone = "Phone is required";
-      valid = false;
-    } else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
-      newFormErrors.phone = "Invalid phone number";
-      valid = false;
-    } else {
-      newFormErrors.phone = "";
-    }
-
-    if (!formData.message.trim()) {
-      newFormErrors.message = "Message is required";
-      valid = false;
-    } else if (formData.message.trim().length < 10) {
-      newFormErrors.message = "Message should be at least 10 characters";
-      valid = false;
-    } else {
-      newFormErrors.message = "";
-    }
-
-    setFormErrors(newFormErrors);
-    return valid;
+  const onSendClick = (e) => {
+    if (isValid) return;
+    e.preventDefault();
+    const fromKeyboard = e.detail === 0;
+    revealErrors(fromKeyboard);
+    if (!fromKeyboard && pointerType.current !== "mouse") slipAway();
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isValid) {
+      revealErrors(true);
+      return;
+    }
 
-    if (validateForm()) {
-      setIsSubmitting(true);
+    setStatus("submitting");
+    try {
+      // Store the message in Firebase, then send the email notification through EmailJS.
+      const response = await fetch("https://laptop-galaxy-project-default-rtdb.firebaseio.com/Contact.json", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, submissionDate: new Date().toLocaleString() }),
+      });
+      if (!response.ok) throw new Error(`Firebase responded with ${response.status}`);
 
-      try {
-        const currentDate = new Date();
-        const formattedDate = currentDate.toLocaleString();
-
-        // Send to Firebase
-        const response = await fetch(
-          "https://laptop-galaxy-project-default-rtdb.firebaseio.com/Contact.json",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              name: formData.name,
-              email: formData.email,
-              phone: formData.phone,
-              message: formData.message,
-              submissionDate: formattedDate,
-            }),
-          }
-        );
-
-        if (response.ok) {
-          // Send Email
-          sendEmail(e);
-        } else {
-          console.error("Failed to send data to Firebase");
-          setIsSubmitting(false);
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        setIsSubmitting(false);
-      }
+      await emailjs.sendForm("service_0gng1uo", "template_1y0fxp8", form.current, "IMVKX8RBjNb8nOTwo");
+      setFormData(emptyForm);
+      setTouched({});
+      setStatus("success");
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+      setStatus("error");
     }
   };
 
-  const contactInfo = [
-    {
-      icon: "📧",
-      label: "Email",
-      value: "cmanishkumar193@gmail.com",
-      link: "mailto:cmanishkumar193@gmail.com"
-    },
-    {
-      icon: "📱",
-      label: "Phone",
-      value: "+91 8955946276",
-      link: "tel:+918955946276"
-    },
-    {
-      icon: "📍",
-      label: "Location",
-      value: "Jodhpur, Rajasthan, India",
-      link: "#"
-    },
-    {
-      icon: "💼",
-      label: "LinkedIn",
-      value: "Connect with me",
-      link: "https://www.linkedin.com/in/manishkumarchoudhary/"
-    }
-  ];
+  const isSubmitting = status === "submitting";
 
   return (
-    <section className={styles.contactSection} id="contact" ref={contactRef}>
-      <div className={styles.backgroundElements}>
-        <div className={styles.gradient1}></div>
-        <div className={styles.gradient2}></div>
-        <div className={styles.grid}></div>
-        <div className={styles.floatingParticles}>
-          <div className={styles.particle1}></div>
-          <div className={styles.particle2}></div>
-          <div className={styles.particle3}></div>
-          <div className={styles.particle4}></div>
-        </div>
-      </div>
+    <section id="contact" className="section" aria-labelledby="contact-title">
+      <div className={`container ${styles.layout}`}>
+        <div className={styles.intro}>
+          <SectionHeader
+            index="07"
+            label="Contact"
+            title={
+              <>
+                Let's <em>talk.</em>
+              </>
+            }
+            titleId="contact-title"
+          >
+            Email is the quickest way to reach me. I'm available for new opportunities in backend engineering.
+          </SectionHeader>
 
-      <div className={styles.container}>
-        <div className={`${styles.sectionHeader} ${styles.animateOnScroll}`}>
-          <span className={styles.sectionLabel}>Let's Connect</span>
-          <h2 className={styles.sectionTitle}>
-            Get In <span className={styles.highlight}>Touch</span>
-          </h2>
-          <p className={styles.sectionDescription}>
-            Have a project in mind or want to discuss opportunities? I'd love to hear from you!
-          </p>
-          <div className={styles.titleUnderline}></div>
-        </div>
+          <div className={styles.mailRow} data-reveal>
+            <a href={`mailto:${EMAIL}`} className={styles.mail}>
+              {EMAIL}
+            </a>
+            <button type="button" className={styles.copy} onClick={copyEmail}>
+              {copyState === "copied" ? <FiCheck aria-hidden="true" /> : <FiCopy aria-hidden="true" />}
+              <span>{copyState === "copied" ? "Copied" : "Copy"}</span>
+              <span className="visually-hidden"> email address</span>
+            </button>
+            <span className="visually-hidden" role="status">
+              {copyState === "copied" && "Email address copied to clipboard"}
+              {copyState === "failed" && "Could not copy. Please select the address manually."}
+            </span>
+          </div>
 
-        <div className={styles.contactContent}>
-          <div className={`${styles.contactInfo} ${styles.animateOnScroll}`}>
-            <div className={styles.infoCard}>
-              <div className={styles.cardHeader}>
-                <div className={styles.profileSection}>
-                  <div className={styles.profileAvatar}>
-                    <div className={styles.avatarInitials}>MC</div>
-                    <div className={styles.statusIndicator}></div>
-                  </div>
-                  <div className={styles.profileInfo}>
-                    <h3 className={styles.name}>Manish Kumar Choudhary</h3>
-                    <p className={styles.title}>Java Backend Developer</p>
-                    <div className={styles.availability}>
-                      <span className={styles.statusDot}></span>
-                      Available for new opportunities
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.contactMethods}>
-                {contactInfo.map((info, index) => (
+          <ul className={styles.channels} data-reveal>
+            {channels.map((channel) => {
+              const external = channel.newTab || channel.href.startsWith("http");
+              return (
+                <li key={channel.label}>
                   <a
-                    key={index}
-                    href={info.link}
-                    target={info.link.startsWith('http') ? '_blank' : '_self'}
-                    rel={info.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                    className={styles.contactMethod}
+                    href={channel.href}
+                    className={styles.channel}
+                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
-                    <div className={styles.methodIcon}>
-                      <span>{info.icon}</span>
-                    </div>
-                    <div className={styles.methodContent}>
-                      <span className={styles.methodLabel}>{info.label}</span>
-                      <span className={styles.methodValue}>{info.value}</span>
-                    </div>
-                    <div className={styles.methodArrow}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
+                    <span className={styles.channelLabel}>{channel.label}</span>
+                    <span className={styles.channelValue}>{channel.value}</span>
+                    <FiArrowUpRight className={`arrow-ne ${styles.channelIcon}`} aria-hidden="true" />
+                    {external && <span className="visually-hidden">(opens in a new tab)</span>}
                   </a>
-                ))}
-              </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
 
-              <div className={styles.responseTime}>
-                <div className={styles.responseIcon}>⚡</div>
-                <div className={styles.responseText}>
-                  <span className={styles.responseTitle}>Quick Response</span>
-                  <span className={styles.responseDesc}>Usually within 24 hours</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`${styles.contactForm} ${styles.animateOnScroll}`}>
-            <div className={styles.formCard}>
-              {showSuccessMessage && (
-                <div className={styles.successNotification}>
-                  <div className={styles.successIcon}>✅</div>
-                  <div className={styles.successContent}>
-                    <h4>Message Sent Successfully!</h4>
-                    <p>Thank you for reaching out. I'll get back to you soon.</p>
-                  </div>
-                </div>
-              )}
-
-              <form ref={form} onSubmit={handleSubmit} className={styles.form}>
-                <div className={styles.formGrid}>
-                  <div className={styles.formGroup}>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="👤 Full Name"
-                      required
-                      className={styles.input}
-                    />
-                    {formErrors.name && (
-                      <span className={styles.errorMessage}>{formErrors.name}</span>
-                    )}
-                  </div>
-
-                  <div className={styles.formGroup}>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="📧 Email Address"
-                      required
-                      className={styles.input}
-                    />
-                    {formErrors.email && (
-                      <span className={styles.errorMessage}>{formErrors.email}</span>
-                    )}
-                  </div>
-                </div>
-
-                <div className={styles.formGroup}>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="📞 Phone Number"
-                    required
-                    className={styles.input}
-                  />
-                  {formErrors.phone && (
-                    <span className={styles.errorMessage}>{formErrors.phone}</span>
-                  )}
-                </div>
-
-                <div className={styles.formGroup}>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="📝 Your Message"
-                    required
-                    className={`${styles.input} ${styles.textarea}`}
-                  />
-                  {formErrors.message && (
-                    <span className={styles.errorMessage}>{formErrors.message}</span>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  className={`${styles.submitButton} ${isSubmitting ? styles.submitting : ''}`}
-                  disabled={isSubmitting}
+        <div className={styles.formWrap} data-reveal>
+          <h3 className={styles.formTitle}>Or send a message</h3>
+          <p className={styles.formNote}>All fields are required.</p>
+          <form ref={form} onSubmit={handleSubmit} className={styles.form} noValidate>
+            {[...fields, { name: "message", label: "Message", multiline: true }].map((field) => {
+              const id = `contact-${field.name}`;
+              const error = touched[field.name] ? errors[field.name] : "";
+              const ok = formData[field.name] && !errors[field.name];
+              const Control = field.multiline ? "textarea" : "input";
+              const length = formData.message.trim().length;
+              return (
+                <div
+                  key={field.name}
+                  className={`${styles.field} ${field.multiline ? styles.full : ""} ${error ? styles.hasError : ""} ${
+                    ok ? styles.isValid : ""
+                  }`}
                 >
-                  {isSubmitting ? (
-                    <>
-                      <div className={styles.loader}></div>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Send Message ✈️</span>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </>
+                  <div className={styles.labelRow}>
+                    <label htmlFor={id}>{field.label}</label>
+                    {field.multiline && (
+                      <span className={styles.counter} aria-hidden="true">
+                        {length < MIN_MESSAGE ? `${length}/${MIN_MESSAGE} min` : `${length} chars`}
+                      </span>
+                    )}
+                  </div>
+                  <div className={styles.control}>
+                    <Control
+                      id={id}
+                      name={field.name}
+                      {...(field.multiline
+                        ? { rows: 5 }
+                        : { type: field.type, autoComplete: field.autoComplete, inputMode: field.inputMode })}
+                      value={formData[field.name]}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      aria-invalid={error ? "true" : undefined}
+                      aria-describedby={error ? `${id}-error` : undefined}
+                      required
+                    />
+                    {ok && <FiCheckCircle className={styles.stateIcon} aria-hidden="true" />}
+                    {error && <FiAlertCircle className={styles.stateIcon} aria-hidden="true" />}
+                  </div>
+                  {error && (
+                    <p id={`${id}-error`} className={styles.error}>
+                      {error}
+                    </p>
                   )}
+                </div>
+              );
+            })}
+
+            <div className={`${styles.full} ${styles.submitArea}`}>
+              <div ref={trackRef} className={styles.track}>
+                <button
+                  ref={buttonRef}
+                  type="submit"
+                  className={`btn btn--primary ${styles.send} ${!isValid ? styles.locked : ""}`}
+                  style={{ transform: `translateX(${dodge}px)` }}
+                  aria-disabled={!isValid || isSubmitting ? "true" : undefined}
+                  aria-describedby="contact-send-hint"
+                  disabled={isSubmitting}
+                  onPointerDown={(e) => (pointerType.current = e.pointerType)}
+                  onPointerEnter={onSendPointerEnter}
+                  onClick={onSendClick}
+                >
+                  {isSubmitting ? "Sending…" : "Send message"}
+                  {!isSubmitting && <FiSend aria-hidden="true" />}
                 </button>
-              </form>
+              </div>
+              <p id="contact-send-hint" className={`${styles.hint} ${isValid ? styles.hintReady : ""}`} aria-live="polite">
+                {isValid
+                  ? "All set, ready to send."
+                  : `Complete ${remaining} more field${remaining === 1 ? "" : "s"} to send.`}
+              </p>
+              <p className={styles.formStatus} role="status">
+                {status === "success" && "Thanks, your message was sent. I'll get back to you soon."}
+                {status === "error" && (
+                  <span className={styles.formError}>
+                    Sorry, the message could not be sent. Please email me directly at {EMAIL}.
+                  </span>
+                )}
+              </p>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

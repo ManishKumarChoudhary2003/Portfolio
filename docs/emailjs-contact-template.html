@@ -1,0 +1,109 @@
+<!--
+  EmailJS "Contact Us" template for the portfolio contact form.
+  Paste everything below this comment into EmailJS → Email Templates → (your template) → Content → Edit Content → Code (<>).
+  Variables come from the form field names: {{name}}, {{email}}, {{phone}}, {{message}}.
+-->
+<div style="margin:0;padding:0;background-color:#f2efe8;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2efe8;">
+    <tr>
+      <td align="center" style="padding:32px 12px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;">
+
+          <!-- Brand row -->
+          <tr>
+            <td style="padding:0 4px 16px 4px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="34" height="34" align="center" valign="middle" style="width:34px;height:34px;border-radius:17px;background-color:#1b1a16;color:#f6f4ee;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-style:italic;line-height:34px;">M</td>
+                  <td style="padding-left:10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#4a473f;">Portfolio&nbsp;&nbsp;·&nbsp;&nbsp;Contact form</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Card -->
+          <tr>
+            <td style="background-color:#faf8f3;border:1px solid #dcd6c8;border-radius:14px;overflow:hidden;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+
+                <!-- Accent bar -->
+                <tr>
+                  <td height="4" style="height:4px;line-height:4px;font-size:0;background-color:#1f5c45;border-radius:14px 14px 0 0;">&nbsp;</td>
+                </tr>
+
+                <!-- Heading -->
+                <tr>
+                  <td style="padding:28px 32px 8px 32px;">
+                    <p style="margin:0 0 10px 0;font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#1f5c45;">New message</p>
+                    <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:28px;line-height:34px;font-weight:normal;color:#1b1a16;">
+                      <span style="font-style:italic;color:#1f5c45;">{{name}}</span> wants to get in touch.
+                    </h1>
+                  </td>
+                </tr>
+
+                <!-- Message -->
+                <tr>
+                  <td style="padding:20px 32px 8px 32px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="border-left:3px solid #1f5c45;background-color:#f2efe8;border-radius:0 8px 8px 0;padding:16px 18px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#1b1a16;white-space:pre-wrap;">{{message}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Sender details -->
+                <tr>
+                  <td style="padding:20px 32px 4px 32px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                      <tr>
+                        <td width="90" style="padding:10px 0;border-top:1px solid #e4dfd2;font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b675d;">From</td>
+                        <td style="padding:10px 0;border-top:1px solid #e4dfd2;color:#1b1a16;font-weight:bold;">{{name}}</td>
+                      </tr>
+                      <tr>
+                        <td width="90" style="padding:10px 0;border-top:1px solid #e4dfd2;font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b675d;">Email</td>
+                        <td style="padding:10px 0;border-top:1px solid #e4dfd2;"><a href="mailto:{{email}}" style="color:#1f5c45;text-decoration:underline;">{{email}}</a></td>
+                      </tr>
+                      <tr>
+                        <td width="90" style="padding:10px 0;border-top:1px solid #e4dfd2;border-bottom:1px solid #e4dfd2;font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b675d;">Phone</td>
+                        <td style="padding:10px 0;border-top:1px solid #e4dfd2;border-bottom:1px solid #e4dfd2;"><a href="tel:{{phone}}" style="color:#1b1a16;text-decoration:none;">{{phone}}</a></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Actions -->
+                <tr>
+                  <td style="padding:24px 32px 32px 32px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="border-radius:999px;background-color:#1b1a16;">
+                          <a href="mailto:{{email}}?subject=Re%3A%20Your%20message%20on%20my%20portfolio" style="display:inline-block;padding:12px 22px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#f6f4ee;text-decoration:none;border-radius:999px;">Reply to {{name}} &rarr;</a>
+                        </td>
+                        <td width="10" style="width:10px;">&nbsp;</td>
+                        <td style="border-radius:999px;border:1px solid #bdb6a6;">
+                          <a href="tel:{{phone}}" style="display:inline-block;padding:11px 20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#1b1a16;text-decoration:none;border-radius:999px;">Call</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding:18px 4px 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#6b675d;">
+              Sent from the contact form on
+              <a href="https://manish-kumar-choudhary.netlify.app/" style="color:#1f5c45;text-decoration:underline;">manish-kumar-choudhary.netlify.app</a>.
+              Replying to this email goes straight to {{name}}.
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>

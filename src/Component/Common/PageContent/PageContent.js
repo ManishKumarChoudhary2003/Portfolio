@@ -1,10 +1,8 @@
-import classes from './PageContent.module.css';
-
 function PageContent({ children }) {
   return (
-    <div className={classes.content}>
+    <main id="main" tabIndex={-1}>
       {children}
-    </div>
+    </main>
   );
 }
 

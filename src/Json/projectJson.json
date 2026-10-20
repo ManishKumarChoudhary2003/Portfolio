@@ -1,177 +1,110 @@
-[
-  {
-    "id": 1,
-    "title": "ClearDocs",
-    "image": "https://img.freepik.com/free-vector/hand-drawn-credit-assessment-concept-with-documents_23-2149154259.jpg?semt=ais_hybrid&w=740",
-    "technologies": [
-      "Spring Boot",
-      "Kafka",
-      "Elasticsearch",
-      "React.js"
-    ],
-    "dsc": {
-      "point_1": "ClearDocs is a seamless and secure platform designed to simplify document verification for individuals and organizations.",
-      "point_2": "Built with Spring Boot, Kafka, Elasticsearch, and ReactJS to deliver fast, reliable, and user-friendly verification services."
+{
+  "featured": [
+    {
+      "id": "cleardocs",
+      "title": "ClearDocs",
+      "kind": "Document verification platform",
+      "dates": "Oct 2024 – Apr 2025",
+      "summary": "Organisations upload student documents once, then check any file presented later against the stored original.",
+      "highlights": [
+        "SHA-256 hash comparison flags any file that differs from the copy on record.",
+        "Kafka events move notification emails off the request path.",
+        "Verification audit log indexed in Elasticsearch for fast full-text search."
+      ],
+      "stack": ["Spring Boot", "Kafka", "Elasticsearch", "MySQL", "JWT", "React"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/ManishKumarChoudhary2003/ClearDocs" },
+        { "label": "Live site", "href": "https://cleardocs.netlify.app/" }
+      ]
     },
-    "links": {
-      "view": "https://cleardocs.netlify.app/",
-      "code": "https://github.com/ManishKumarChoudhary2003/ClearDocs"
-    }
-  },
-  {
-    "id": 2,
-    "title": "Peer Vault",
-    "image": "https://miro.medium.com/v2/resize:fit:1400/1*1yFueH39CmrY7u9Dh53ZTw.png",
-    "technologies": [
-      "Spring Boot",
-      "Spring Cloud Gateway",
-      "Eureka",
-      "IPFS",
-      "JWT"
-    ],
-    "dsc": {
-      "point_1": "Designed a microservices architecture using Spring Boot, Spring Cloud Gateway, and Eureka for scalability and maintainability.",
-      "point_2": "Integrated IPFS for secure decentralized storage and added JWT-based authentication and authorization across services."
+    {
+      "id": "peervault",
+      "title": "Peer Vault",
+      "kind": "Microservices file storage",
+      "dates": "Jul 2024 – Sep 2024",
+      "summary": "File storage and sharing split into independent Spring Boot services behind one gateway, with file content on IPFS.",
+      "highlights": [
+        "Spring Cloud Gateway validates JWTs and routes to services found through Eureka.",
+        "Files are stored on IPFS and served by content hash.",
+        "Registration and file-share events flow through Kafka to a notification service."
+      ],
+      "stack": ["Spring Boot", "Spring Cloud Gateway", "Eureka", "Kafka", "IPFS", "Docker"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/Peer-Vault" },
+        { "label": "Demo post", "href": "https://www.linkedin.com/feed/update/urn:li:activity:7350381043662622720/" }
+      ]
     },
-    "links": {
-      "view": "https://www.linkedin.com/feed/update/urn:li:activity:7350381043662622720/",
-      "code": "https://github.com/Peer-Vault"
+    {
+      "id": "formfusion",
+      "title": "Form Fusion",
+      "kind": "Form builder & analytics",
+      "dates": "Jan 2024 – Feb 2024",
+      "summary": "Create forms, share them by link, collect responses and review them per form.",
+      "highlights": [
+        "Email OTP verification at sign-up, then JWT-secured access.",
+        "REST APIs nested by owner and form: users own forms, forms own questions.",
+        "React + Redux frontend backed by Spring Boot and MySQL."
+      ],
+      "stack": ["Java", "Spring Boot", "Spring Security", "MySQL", "React", "Redux"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/Manishkumarchoudhary2003/Form-Fusion" },
+        { "label": "Live site", "href": "https://form-fusion.netlify.app/" }
+      ]
     }
-  },
-  {
-    "id": 3,
-    "title": "Form Fusion",
-    "image": "https://cdn.jotfor.ms/assets/img/landing/minimals/interactive-forms/introduction.svg",
-    "technologies": [
-      "Java",
-      "Spring Boot",
-      "React.js",
-      "MySQL",
-      "JWT"
-    ],
-    "dsc": {
-      "point_1": "Form Fusion combines Java Spring Boot and ReactJS for intuitive form creation and analysis.",
-      "point_2": "Secured with JWT authentication and MySQL database to ensure data integrity and scalability."
+  ],
+  "more": [
+    {
+      "title": "Library Inventory",
+      "summary": "Book management with Kafka notifications on inventory changes.",
+      "stack": ["Spring Boot", "Kafka", "JPA"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/ManishKumarChoudhary2003/Library-Inventory" },
+        { "label": "Demo post", "href": "https://www.linkedin.com/feed/update/urn:li:activity:7214590186834317313/" }
+      ]
     },
-    "links": {
-      "view": "https://form-fusion.netlify.app/",
-      "code": "https://github.com/Manishkumarchoudhary2003/Form-Fusion"
-    }
-  },
-  {
-    "id": 4,
-    "title": "Laptop Galaxy(E-Commerce)",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO1lBizkxc-UlPYBVjADZ00KBuGceZjfM8KAOIoe-3CC_nJDPFj6vApv8n1p8mrAA4SbM&usqp=CAU",
-    "technologies": [
-      "React.js",
-      "Firebase",
-      "CSS3",
-      "JavaScript"
-    ],
-    "dsc": {
-      "point_1": "React.js web app showcasing 200+ laptops from 10+ brands with detailed specs from Firebase.",
-      "point_2": "Users can view details and add favorites to a cart for easy reference."
+    {
+      "title": "RealTime ChatRoom",
+      "summary": "Live chat over WebSocket with REST APIs for connections and messages.",
+      "stack": ["Spring Boot", "WebSocket"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/Manishkumarchoudhary2003/Real-Time-ChatRoom" },
+        { "label": "Demo post", "href": "https://www.linkedin.com/feed/update/urn:li:activity:7165385994312138753/" }
+      ]
     },
-    "links": {
-      "view": "https://laptop-galaxy.netlify.app/",
-      "code": "https://github.com/Manishkumarchoudhary2003/Laptop-Galaxy"
-    }
-  },
-  {
-    "id": 5,
-    "title": "Personal Portfolio",
-    "image": "https://www.notion.so/cdn-cgi/image/format=webp,width=3840,quality=80/https://s3.us-west-2.amazonaws.com/public.notion-static.com/creator-images/design_with_naren-1707771878461.png",
-    "technologies": [
-      "React.js",
-      "Firebase",
-      "CSS Modules",
-      "JavaScript"
-    ],
-    "dsc": {
-      "point_1": "Dynamic portfolio highlighting skills, projects, and professional journey using React.",
-      "point_2": "Contact form managed by Firebase and fully responsive design for all devices."
+    {
+      "title": "Student Management System",
+      "summary": "CRUD system for student records with a JSP/JSTL frontend.",
+      "stack": ["Spring Boot", "H2", "JSP"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/Manishkumarchoudhary2003/Student-Management-System" },
+        { "label": "Demo post", "href": "https://www.linkedin.com/feed/update/urn:li:activity:7138875219984777216/" }
+      ]
     },
-    "links": {
-      "view": "https://manish-kumar-choudhary.netlify.app/",
-      "code": "https://github.com/Manishkumarchoudhary2003/Portfolio"
-    }
-  },
-  {
-    "id": 6,
-    "title": "Expense Tracker",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlgL8KTBA9dcyyofxx-7PzSCrs96qiD6WyUA&usqp=CAU",
-    "technologies": [
-      "React.js",
-      "Local Storage",
-      "CSS3",
-      "JavaScript"
-    ],
-    "dsc": {
-      "point_1": "Simple tool to track personal or business expenses with an intuitive interface.",
-      "point_2": "Data stored locally for quick access and efficient financial tracking."
+    {
+      "title": "Laptop Galaxy",
+      "summary": "Catalogue of 200+ laptops from 10+ brands with specs from Firebase.",
+      "stack": ["React", "Firebase"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/Manishkumarchoudhary2003/Laptop-Galaxy" },
+        { "label": "Live", "href": "https://laptop-galaxy.netlify.app/" }
+      ]
     },
-    "links": {
-      "view": "https://react-application-expense-tracker.netlify.app/",
-      "code": "https://github.com/Manishkumarchoudhary2003/ExpenseTracker"
-    }
-  },
-  {
-    "id": 7,
-    "title": "Student Management System",
-    "image": "https://5.imimg.com/data5/DR/WM/YA/SELLER-50831584/student-information-system.png",
-    "technologies": [
-      "Java",
-      "Spring Boot",
-      "H2 Database",
-      "JSP",
-      "JSTL"
-    ],
-    "dsc": {
-      "point_1": "CRUD system for managing student data built with Spring Boot and H2 Database.",
-      "point_2": "Frontend developed using JSP and JSTL for a clean and user-friendly interface."
+    {
+      "title": "Expense Tracker",
+      "summary": "Personal expense tracking with data kept in local storage.",
+      "stack": ["React", "Local Storage"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/Manishkumarchoudhary2003/ExpenseTracker" },
+        { "label": "Live", "href": "https://react-application-expense-tracker.netlify.app/" }
+      ]
     },
-    "links": {
-      "view": "https://www.linkedin.com/feed/update/urn:li:activity:7138875219984777216/",
-      "code": "https://github.com/Manishkumarchoudhary2003/Student-Management-System"
+    {
+      "title": "This portfolio",
+      "summary": "The site you're on, with a Firebase and EmailJS contact form.",
+      "stack": ["React", "CSS Modules"],
+      "links": [
+        { "label": "Code", "href": "https://github.com/Manishkumarchoudhary2003/Portfolio" }
+      ]
     }
-  },
-  {
-    "id": 8,
-    "title": "RealTime ChatRoom",
-    "image": "https://i.ytimg.com/vi/UymGJnv-WsE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDrj5GUR14SO2a19H44dsXFFB_WvA",
-    "technologies": [
-      "Java",
-      "Spring Boot",
-      "WebSocket",
-      "REST API"
-    ],
-    "dsc": {
-      "point_1": "Real-time chat app using Spring Boot and WebSocket for live communication.",
-      "point_2": "REST APIs manage connections and messages efficiently for seamless chat."
-    },
-    "links": {
-      "view": "https://www.linkedin.com/feed/update/urn:li:activity:7165385994312138753/",
-      "code": "https://github.com/Manishkumarchoudhary2003/Real-Time-ChatRoom"
-    }
-  },
-  {
-    "id": 9,
-    "title": "Library Inventory",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsotx0yl9toWsKi5q-m0NHZMxwpooCYxgIXA&s",
-    "technologies": [
-      "Spring Boot",
-      "H2 Database",
-      "Hibernate",
-      "JPA",
-      "Kafka"
-    ],
-    "dsc": {
-      "point_1": "Kafka-powered notifications keep librarians updated on inventory changes instantly.",
-      "point_2": "Built with Spring Boot, H2, Hibernate, and JPA for efficient book management."
-    },
-    "links": {
-      "view": "https://www.linkedin.com/feed/update/urn:li:activity:7214590186834317313/",
-      "code": "https://github.com/ManishKumarChoudhary2003/Library-Inventory"
-    }
-  }
-]
+  ]
+}

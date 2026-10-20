@@ -3,44 +3,57 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon.png" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#667eea" />
+  <title>Manish Kumar Choudhary | Software Engineer</title>
   <meta name="description"
-    content="Manish Kumar Choudhary - Full Stack Developer Portfolio. Showcasing modern web applications, React projects, and innovative solutions." />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    content="Manish Kumar Choudhary is a software engineer building production backend systems in Java and Spring Boot: microservices, REST APIs, Kafka, Elasticsearch and Redis." />
+  <meta name="author" content="Manish Kumar Choudhary" />
+  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#131412" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
+
+  <link rel="canonical" href="https://manish-kumar-choudhary.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manish-kumar-choudhary.netlify.app/" />
+  <meta property="og:title" content="Manish Kumar Choudhary | Software Engineer" />
+  <meta property="og:description"
+    content="Backend engineering with Java and Spring Boot: microservices, REST APIs, Kafka, Elasticsearch and Redis." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Manish Kumar Choudhary | Software Engineer" />
+  <meta name="twitter:description"
+    content="Backend engineering with Java and Spring Boot: microservices, REST APIs, Kafka, Elasticsearch and Redis." />
+
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>Manish's Portfolio </title>
+  <script>
+    // Apply the saved or system theme before first paint, and opt into entrance motion only
+    // when IntersectionObserver exists and the visitor hasn't asked for reduced motion.
+    (function () {
+      var root = document.documentElement;
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) { }
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+      if ('IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        root.classList.add('motion-ok');
+      }
+    })();
+  </script>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
 </body>
 
 </html>

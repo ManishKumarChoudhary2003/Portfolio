@@ -1,143 +1,164 @@
-import React, { useState, useEffect } from "react";
-import github from "../../assets/github.png";
-import linkedln from "../../assets/linkedln.png";
-import Instagram from "../../assets/insta.jpeg";
-import Manish from "../../assets/Manish.jpg";
+import { Fragment, useEffect, useRef } from "react";
+import { FiArrowDown, FiArrowUpRight, FiDownload, FiFileText, FiGithub, FiLinkedin } from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
+import profile from "../../Json/profile.json";
+import portraitJpg from "../../assets/portrait-560.jpg";
+import portraitWebp from "../../assets/portrait-560.webp";
+import StatCounter from "./StatCounter";
 import styles from "./Home.module.css";
-import Email from "../../assets/email.png";
-import Resume from "../../assets/resume.png";
-import leetcode from "../../assets/leetcode.png";
+
+const RESUME_FILENAME = "Manish_Kumar_Choudhary_Resume.pdf";
+const resumeHref = `${process.env.PUBLIC_URL}${profile.resumeUrl}`;
+
+const headline = ["Engineering", "reliable", "backend", "systems", "that"];
+
+const socials = [
+  { label: "GitHub", href: profile.links.github, Icon: FiGithub },
+  { label: "LinkedIn", href: profile.links.linkedin, Icon: FiLinkedin },
+  { label: "LeetCode", href: profile.links.leetcode, Icon: SiLeetcode },
+];
+
+// The photo drifts a little slower than the page while the hero scrolls away.
+const useParallax = (ref) => {
+  useEffect(() => {
+    if (!document.documentElement.classList.contains("motion-ok")) return undefined;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const y = Math.min(window.scrollY, window.innerHeight);
+      ref.current?.style.setProperty("--py", (y * 0.08).toFixed(1));
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [ref]);
+};
 
 const Home = () => {
-    const roles = [
-        "Java Backend Developer",
-        "Software Engineer",
-        "Tech Enthusiast",
-        "Spring Boot Developer"
-    ];
+  const portraitRef = useRef(null);
+  useParallax(portraitRef);
 
-    const [currentRole, setCurrentRole] = useState(0);
+  return (
+    <section id="home" className={styles.hero} aria-labelledby="hero-title">
+      <div className={`container ${styles.grid}`}>
+        <div className={styles.copy}>
+          <div className={styles.metaRow}>
+            <span className={styles.status}>
+              <span className={styles.statusDot} aria-hidden="true" />
+              Available for new opportunities
+            </span>
+            <span className={styles.location}>{profile.location}</span>
+          </div>
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentRole((prev) => (prev + 1) % roles.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [roles.length]);
+          <h1 id="hero-title" className={styles.title}>
+            <span className={styles.name}>
+              {profile.name}, {profile.title}
+            </span>
+            <span className={styles.headline}>
+              {headline.map((word, i) => (
+                <Fragment key={word}>
+                  <span className={styles.mask}>
+                    <span className={styles.word} style={{ "--i": i }}>
+                      {word}
+                    </span>
+                  </span>{" "}
+                </Fragment>
+              ))}
+              <span className={styles.mask}>
+                <em className={styles.word} style={{ "--i": headline.length }}>
+                  scale.
+                </em>
+              </span>
+            </span>
+          </h1>
 
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
-    };
+          <p className={styles.lead}>
+            I build production backend systems in Java and Spring Boot: REST APIs, Kafka-driven services,
+            Elasticsearch search and Redis caching. Currently at Platform Commons, where I own microservices on a live
+            platform.
+          </p>
 
-    return (
-        <div className={styles.homeContainer} id="home">
-            <div className={styles.intro}>
-                <div className={styles.greeting}>
-                    <span className={styles.wave}>👋</span>
-                    <span className={styles.greetingText}>Hi There,</span>
-                </div>
-                <h1 className={styles.name}>
-                    <span className={styles.firstName}>I'm Manish</span>
-                    {/* <span className={styles.lastName}>Kumar Choudhary</span> */}
-                </h1>
-                <div className={styles.roleContainer}>
-                    <span className={styles.rolePrefix}>I'm a </span>
-                    <span className={styles.dynamicRole}>{roles[currentRole]}</span>
-                    <span className={styles.cursor}>|</span>
-                </div>
-                <p className={styles.introPara}>
-                    Passionate Java developer with 1+ years at Platform Commons.
-                    Building robust backend services with Spring Boot and microservices.
-                </p>
+          <div className={styles.actions}>
+            <a href="#projects" className="btn btn--primary">
+              View my work
+              <FiArrowDown className="arrow-down" aria-hidden="true" />
+            </a>
+            <a href="#contact" className="btn btn--ghost">
+              Get in touch
+            </a>
+            {profile.resumeUrl && (
+              <span className={styles.resume}>
+                <a href={resumeHref} className="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+                  <FiFileText aria-hidden="true" />
+                  View resume
+                  <span className="visually-hidden">(PDF, opens in a new tab)</span>
+                </a>
+                <a href={resumeHref} className={`btn btn--ghost ${styles.download}`}
+                  download={RESUME_FILENAME}
+                  title="Download resume (PDF)"
+                >
+                  <FiDownload aria-hidden="true" />
+                  <span className="visually-hidden">Download resume (PDF)</span>
+                </a>
+              </span>
+            )}
+          </div>
 
-                {/* Action Buttons */}
-                <div className={styles.actionButtons}>
-                    <button
-                        className={styles.primaryButton}
-                        onClick={() => scrollToSection('contact')}
-                    >
-                        <span>Get in Touch</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
-                    <button
-                        className={styles.secondaryButton}
-                        onClick={() => scrollToSection('projects')}
-                    >
-                        <span>View My Work</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor" strokeWidth="2" />
-                            <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div className={styles.links}>
-                    <a
-                        href="https://www.linkedin.com/in/manishkumarchoudhary/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-tooltip="LinkedIn"
-                    >
-                        <img src={linkedln} alt="LinkedIn" />
-                    </a>
-                    <a
-                        href="https://github.com/Manishkumarchoudhary2003"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-tooltip="GitHub"
-                    >
-                        <img src={github} alt="Github" />
-                    </a>
-                    <a
-                        href="https://leetcode.com/Manish_193/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-tooltip="LeetCode"
-                    >
-                        <img src={leetcode} alt="leetcode" />
-                    </a>
-                    <a
-                        href="https://www.instagram.com/manish_.96/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-tooltip="Instagram"
-                    >
-                        <img src={Instagram} alt="Instagram" />
-                    </a>
-                    <a
-                        href="mailto:cmanishkumar193@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-tooltip="Email"
-                    >
-                        <img src={Email} alt="Email" />
-                    </a>
-                    <a
-                        href="https://drive.google.com/uc?export=download&id=1XZuVGEZqr6jbZrKjoheyptJ5uH6YXyrO"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-tooltip="Resume"
-                    >
-                        <img src={Resume} alt="Resume" />
-                    </a>
-                </div>
-            </div>
-
-            <div className={styles.imageSection}>
-                <div className={styles.imageContainer}>
-                    <div className={styles.imageGlow}></div>
-                    <div className={styles.imageBorder}>
-                        <img src={Manish} alt="Manish Kumar Choudhary" className={styles.profileImage} />
-                    </div>
-                </div>
-            </div>
+          <ul className={styles.socials}>
+            {socials.map(({ label, href, Icon }) => (
+              <li key={label}>
+                <a href={href} target="_blank" rel="noopener noreferrer" className={styles.social}>
+                  <Icon aria-hidden="true" />
+                  {label}
+                  <FiArrowUpRight className={`arrow-ne ${styles.socialArrow}`} aria-hidden="true" />
+                  <span className="visually-hidden">(opens in a new tab)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-    );
+
+        <figure className={styles.portrait} ref={portraitRef}>
+          <div className={styles.arch}>
+            <picture>
+              <source srcSet={portraitWebp} type="image/webp" />
+              <img
+                src={portraitJpg}
+                width="560"
+                height="813"
+                alt="Portrait of Manish Kumar Choudhary"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <figcaption className={styles.badge}>
+            <span className={styles.badgeLabel}>Currently</span>
+            Software Engineer at Platform Commons
+          </figcaption>
+        </figure>
+      </div>
+
+      <div className="container">
+        <dl className={styles.stats}>
+          {profile.stats.map((stat) => (
+            <StatCounter
+              key={stat.label}
+              {...stat}
+              className={styles.stat}
+              numberClassName={styles.statValue}
+              labelClassName={styles.statLabel}
+            />
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
 };
 
 export default Home;

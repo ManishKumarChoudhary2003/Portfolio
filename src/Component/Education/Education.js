@@ -1,89 +1,51 @@
-import React, { useState, useEffect, useRef } from "react";
-import Json from "../../Json/EducationJson.json";
+import { FiAward } from "react-icons/fi";
+import SectionHeader from "../Common/SectionHeader/SectionHeader";
+import data from "../../Json/EducationJson.json";
 import styles from "./Education.module.css";
 
-const Education = () => {
-  const educationRef = useRef(null);
-  const [visibleItems, setVisibleItems] = useState([]);
-  const educationData = Json;
+const Education = () => (
+  <section id="education" className="section section--alt" aria-labelledby="education-title">
+    <div className="container">
+      <SectionHeader
+        index="06"
+        label="Education"
+        title={
+          <>
+            Education & <em>certifications</em>
+          </>
+        }
+        titleId="education-title"
+      />
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const itemId = entry.target.dataset.itemId;
-            setVisibleItems(prev => [...new Set([...prev, itemId])]);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const items = educationRef.current?.querySelectorAll('[data-item-id]');
-    items?.forEach(item => observer.observe(item));
-
-    return () => {
-      items?.forEach(item => observer.unobserve(item));
-    };
-  }, []);
-
-  return (
-    <section className={styles.education} id="education" ref={educationRef}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>My Education</h2>
-          <p className={styles.subtitle}>
-            Academic journey and qualifications that built my foundation
-          </p>
-        </div>
-
-        <div className={styles.timeline}>
-          <div className={styles.timelineLine}></div>
-
-          {educationData && educationData.length > 0 ? (
-            educationData.map((edu, index) => (
-              <div
-                key={edu.id}
-                className={`${styles.timelineItem} ${index % 2 === 0 ? styles.left : styles.right} ${visibleItems.includes(index.toString()) ? styles.visible : ''}`}
-                data-item-id={index.toString()}
-              >
-                <div className={styles.timelineDot}></div>
-
-                <div className={styles.educationCard}>
-                  <div className={styles.cardHeader}>
-                    <div className={styles.yearBadge}>
-                      Class of {edu.passing_year}
-                    </div>
-                    <div className={styles.levelBadge}>
-                      {edu.id === 1 ? 'Bachelor\'s Degree' : edu.id === 2 ? 'Higher Secondary' : 'Secondary School'}
-                    </div>
-                  </div>
-
-                  <div className={styles.cardContent}>
-                    <h3 className={styles.degree}>{edu.title}</h3>
-                    <h4 className={styles.institution}>🏫 {edu.location}</h4>
-
-                    <div className={styles.gradeInfo}>
-                      <div className={styles.grade}>
-                        <span className={styles.gradeLabel}>Grade:</span>
-                        <span className={styles.gradeValue}>{edu.grade}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <div className={styles.layout}>
+        <ol className={styles.list}>
+          {data.education.map((item) => (
+            <li key={item.id} className={styles.item} data-reveal>
+              <p className={styles.year}>{item.year}</p>
+              <div>
+                <h3 className={styles.degree}>{item.title}</h3>
+                <p className={styles.school}>{item.school}</p>
               </div>
-            ))
-          ) : (
-            <div className={styles.noEducation}>
-              <h3>Education Information Coming Soon</h3>
-              <p>Academic details will be updated shortly.</p>
-            </div>
-          )}
+              <p className={styles.grade}>{item.grade}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className={styles.certs} data-reveal style={{ "--reveal-delay": "120ms" }}>
+          <h3 className={styles.certsTitle}>Certifications & recognition</h3>
+          <ul>
+            {data.certifications.map((cert) => (
+              <li key={cert.title} className={styles.cert}>
+                <FiAward aria-hidden="true" className={styles.certIcon} />
+                <span>{cert.title}</span>
+                {cert.year && <span className={styles.certYear}>{cert.year}</span>}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Education;

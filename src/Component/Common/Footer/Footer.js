@@ -1,106 +1,148 @@
-import React, { useEffect, useState } from "react";
+import { FiArrowUpRight, FiFileText, FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
+import BrandMark from "../BrandMark/BrandMark";
+import profile from "../../../Json/profile.json";
+import projects from "../../../Json/projectJson.json";
 import styles from "./Footer.module.css";
 
-const Footer = () => {
-  const [showButton, setShowButton] = useState(false);
+const resumeHref = profile.resumeUrl ? `${process.env.PUBLIC_URL}${profile.resumeUrl}` : "";
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+const sections = [
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "approach", label: "Approach" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
+  { id: "contact", label: "Contact" },
+];
 
-  const handleScroll = () => {
-    if (window.scrollY > 100) {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
-  };
+const connect = [
+  { label: "GitHub", href: profile.links.github, Icon: FiGithub },
+  { label: "LinkedIn", href: profile.links.linkedin, Icon: FiLinkedin },
+  { label: "LeetCode", href: profile.links.leetcode, Icon: SiLeetcode },
+  ...(resumeHref ? [{ label: "Resume", href: resumeHref, Icon: FiFileText }] : []),
+];
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+const External = ({ href, children }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer" className={styles.link}>
+    {children}
+    <FiArrowUpRight className={styles.arrow} aria-hidden="true" />
+    <span className="visually-hidden">(opens in a new tab)</span>
+  </a>
+);
 
-  const socialLinks = [
-    {
-      href: "https://www.linkedin.com/in/manishkumarchoudhary/",
-      icon: "💼",
-      label: "LinkedIn"
-    },
-    {
-      href: "https://github.com/Manishkumarchoudhary2003",
-      icon: "💻",
-      label: "GitHub"
-    },
-    {
-      href: "https://leetcode.com/Manish_193/",
-      icon: "🧩",
-      label: "LeetCode"
-    },
-    {
-      href: "mailto:cmanishkumar193@gmail.com",
-      icon: "📧",
-      label: "Email"
-    }
-  ];
-
-  return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          {/* Brand Section */}
-          <div className={styles.brand}>
-            <h3 className={styles.brandName}>Manish Kumar Choudhary</h3>
-            <p className={styles.brandTitle}>Java Software Engineer</p>
-          </div>
-
-          {/* Social Links */}
-          <div className={styles.social}>
-            <h4 className={styles.sectionTitle}>Let's Connect</h4>
-            <div className={styles.socialLinks}>
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.socialLink}
-                  title={social.label}
-                >
-                  <span className={styles.socialIcon}>{social.icon}</span>
-                  <span className={styles.socialLabel}>{social.label}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Bottom */}
-        <div className={styles.bottom}>
-          <div className={styles.copyright}>
-            <span>© {new Date().getFullYear()} Manish Kumar. All rights reserved.</span>
-          </div>
-          <div className={styles.love}>
-            <span>Made by Manish with ❤️</span>
-          </div>
+const Footer = () => (
+  <footer className={styles.footer}>
+    <div className="container">
+      <div className={styles.cta}>
+        <h2 className={styles.ctaTitle}>
+          Building something that needs a <em>reliable backend?</em>
+        </h2>
+        <div className={styles.ctaActions}>
+          <a href={`mailto:${profile.email}`} className={`${styles.button} ${styles.buttonPrimary}`}>
+            <FiMail aria-hidden="true" />
+            Say hello
+          </a>
+          {resumeHref && (
+            <a href={resumeHref} target="_blank" rel="noopener noreferrer" className={styles.button}>
+              <FiFileText aria-hidden="true" />
+              View resume
+              <span className="visually-hidden">(PDF, opens in a new tab)</span>
+            </a>
+          )}
         </div>
       </div>
 
-      {/* Scroll to Top Button */}
-      {showButton && (
-        <button onClick={scrollToTop} className={styles.scrollToTop}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M7 14L12 9L17 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-      )}
-    </footer>
-  );
-};
+      <div className={styles.grid}>
+        <div className={styles.brand}>
+          <a href="#home" className={styles.brandLink}>
+            <BrandMark />
+            <span>{profile.name}</span>
+          </a>
+          <p className={styles.blurb}>
+            Software Engineer building Java and Spring Boot backends: microservices, Kafka, Elasticsearch and Redis.
+          </p>
+          <p className={styles.status}>
+            <span className={styles.dot} aria-hidden="true" />
+            Available for new opportunities
+          </p>
+        </div>
+
+        <nav className={styles.column} aria-label="Footer">
+          <h3 className={styles.heading}>Navigate</h3>
+          <ul className={styles.list}>
+            {sections.map((section) => (
+              <li key={section.id}>
+                <a href={`#${section.id}`} className={styles.link}>
+                  {section.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className={styles.column}>
+          <h3 className={styles.heading}>Projects</h3>
+          <ul className={styles.list}>
+            {projects.featured.map((project) => (
+              <li key={project.id}>
+                <External href={project.links[0].href}>{project.title}</External>
+              </li>
+            ))}
+            <li>
+              <a href="#more-builds" className={styles.link}>
+                More builds
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.column}>
+          <h3 className={styles.heading}>Connect</h3>
+          <ul className={styles.list}>
+            {connect.map(({ label, href, Icon }) => (
+              <li key={label}>
+                <External href={href}>
+                  <Icon className={styles.icon} aria-hidden="true" />
+                  {label}
+                </External>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className={`${styles.column} ${styles.contactColumn}`}>
+          <h3 className={styles.heading}>Contact</h3>
+          <ul className={styles.list}>
+            <li>
+              <a href={`mailto:${profile.email}`} className={`${styles.link} ${styles.wrap}`}>
+                <FiMail className={styles.icon} aria-hidden="true" />
+                {profile.email}
+              </a>
+            </li>
+            <li>
+              <a href={profile.phone.href} className={styles.link}>
+                <FiPhone className={styles.icon} aria-hidden="true" />
+                {profile.phone.display}
+              </a>
+            </li>
+            <li className={styles.plain}>
+              <FiMapPin className={styles.icon} aria-hidden="true" />
+              {profile.location}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className={styles.bottom}>
+        <p>
+          © {new Date().getFullYear()} {profile.name}
+        </p>
+        <p>Set in Fraunces & IBM Plex</p>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

@@ -1,25 +1,25 @@
 {
-  "short_name": "Manish Portfolio",
-  "name": "Manish Kumar Choudhary - Full Stack Developer Portfolio",
+  "short_name": "Manish K. Choudhary",
+  "name": "Manish Kumar Choudhary | Software Engineer",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
     },
     {
-      "src": "favicon.png",
+      "src": "icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "apple-touch-icon.png",
+      "src": "icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#667eea",
-  "background_color": "#0a0a0f"
+  "theme_color": "#f2efe8",
+  "background_color": "#f2efe8"
 }

@@ -1,0 +1,39 @@
+{
+  "name": "Manish Kumar Choudhary",
+  "title": "Software Engineer",
+  "subtitle": "Java Backend Developer",
+  "location": "Bengaluru, India",
+  "email": "cmanishkumar193@gmail.com",
+  "phone": {
+    "display": "+91 89559 46276",
+    "href": "tel:+918955946276"
+  },
+  "resumeUrl": "/Manish_Kumar_Choudhary_Resume.pdf",
+  "links": {
+    "github": "https://github.com/Manishkumarchoudhary2003",
+    "linkedin": "https://www.linkedin.com/in/manishkumarchoudhary/",
+    "leetcode": "https://leetcode.com/Manish_193/"
+  },
+  "stats": [
+    {
+      "value": 2.5,
+      "suffix": "+",
+      "label": "years building production backends"
+    },
+    {
+      "value": 15,
+      "suffix": "+",
+      "label": "production microservices owned and maintained"
+    },
+    {
+      "value": 25,
+      "suffix": "%",
+      "label": "lower API response latency"
+    },
+    {
+      "value": 40,
+      "suffix": "%",
+      "label": "faster search retrieval"
+    }
+  ]
+}
